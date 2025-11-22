@@ -2,114 +2,108 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
-All colors MUST be HSL.
-*/
-
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 222 47% 11%;
+    /* Unified dark-gold theme - using CSS variables for dynamic switching */
+    --theme-primary: #f8cd86;
+    --theme-accent: #fbbf24;
+    --theme-secondary: #d4a574;
+    --theme-dark: #1a1918;
 
-    --card: 0 0% 100%;
-    --card-foreground: 222 47% 11%;
+    /* Semantic dark background colors */
+    --background: 24 12% 10%;
+    --foreground: 40 9% 92%;
 
-    --popover: 0 0% 100%;
-    --popover-foreground: 222 47% 11%;
+    --card: 24 12% 15%;
+    --card-foreground: 40 9% 92%;
 
-    --primary: 199 89% 48%;
-    --primary-foreground: 0 0% 100%;
+    --popover: 24 12% 15%;
+    --popover-foreground: 40 9% 92%;
 
-    --secondary: 210 40% 96%;
-    --secondary-foreground: 222 47% 11%;
+    --primary: var(--theme-primary);
+    --primary-foreground: 0 0% 20%;
 
-    --muted: 210 40% 96%;
-    --muted-foreground: 215 16% 47%;
+    --secondary: var(--theme-secondary);
+    --secondary-foreground: 0 0% 100%;
 
-    --accent: 197 92% 61%;
-    --accent-foreground: 222 47% 11%;
+    --muted: 210 10% 30%;
+    --muted-foreground: 210 10% 65%;
 
-    --destructive: 0 84% 60%;
+    --accent: var(--theme-accent);
+    --accent-foreground: 0 0% 20%;
+
+    --destructive: 0 80% 50%;
     --destructive-foreground: 0 0% 100%;
 
-    --border: 214 32% 91%;
-    --input: 214 32% 91%;
-    --ring: 199 89% 48%;
+    --border: 210 10% 20%;
+    --input: 210 10% 20%;
+    --ring: var(--theme-primary);
 
     --radius: 0.75rem;
 
-    /* Custom design tokens */
-    --gradient-primary: linear-gradient(135deg, hsl(199, 89%, 48%), hsl(197, 92%, 61%));
-    --gradient-hero: linear-gradient(135deg, hsl(199, 89%, 48%) 0%, hsl(280, 100%, 70%) 100%);
-    --gradient-accent: linear-gradient(120deg, hsl(197, 92%, 61%), hsl(280, 85%, 65%));
-    
-    --shadow-glow: 0 0 40px hsl(199 89% 48% / 0.3);
-    --shadow-card: 0 4px 20px hsl(222 47% 11% / 0.08);
-    --shadow-lg: 0 10px 40px hsl(222 47% 11% / 0.12);
-    
+    /* Dynamic gradients using theme variables instead of hardcoded colors */
+    --gradient-primary: linear-gradient(135deg, var(--theme-primary), var(--theme-accent));
+    --gradient-dark: linear-gradient(135deg, var(--theme-dark) 0%, #0a0a0a 100%);
+    --gradient-overlay: linear-gradient(135deg, var(--theme-primary) 0%, var(--theme-accent) 100%);
+    --gradient-accent: linear-gradient(120deg, var(--theme-accent), rgba(251, 191, 36, 0.85));
+    --gradient-3d: linear-gradient(135deg, var(--theme-primary), var(--theme-secondary), var(--theme-accent));
+    --gradient-soft: linear-gradient(135deg, rgba(248, 205, 134, 0.1), rgba(251, 191, 36, 0.05));
+
+    /* Shadow colors using theme primary for dynamic glow */
+    --shadow-glow: 0 0 30px var(--theme-primary) / 0.3;
+    --shadow-card: 0 8px 32px rgba(0, 0, 0, 0.4);
+    --shadow-lg: 0 20px 50px rgba(0, 0, 0, 0.6);
+    --shadow-3d: 0 30px 80px var(--theme-primary) / 0.12;
+    --shadow-hover: 0 15px 45px rgba(0, 0, 0, 0.5);
+
     --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-fast: all 0.15s cubic-bezier(0.4, 0, 0.2, 1);
   }
 
-  .dark {
-    --background: 222 47% 7%;
-    --foreground: 210 40% 98%;
-
-    --card: 222 47% 10%;
-    --card-foreground: 210 40% 98%;
-
-    --popover: 222 47% 10%;
-    --popover-foreground: 210 40% 98%;
-
-    --primary: 199 89% 48%;
-    --primary-foreground: 0 0% 100%;
-
-    --secondary: 217 33% 17%;
-    --secondary-foreground: 210 40% 98%;
-
-    --muted: 217 33% 17%;
-    --muted-foreground: 215 20% 65%;
-
-    --accent: 197 92% 61%;
-    --accent-foreground: 222 47% 11%;
-
-    --destructive: 0 63% 31%;
-    --destructive-foreground: 210 40% 98%;
-
-    --border: 217 33% 17%;
-    --input: 217 33% 17%;
-    --ring: 199 89% 48%;
-
-    /* Dark mode custom tokens */
-    --gradient-primary: linear-gradient(135deg, hsl(199, 89%, 48%), hsl(197, 92%, 61%));
-    --gradient-hero: linear-gradient(135deg, hsl(199, 89%, 48%) 0%, hsl(280, 100%, 70%) 100%);
-    --gradient-accent: linear-gradient(120deg, hsl(197, 92%, 61%), hsl(280, 85%, 65%));
-    
-    --shadow-glow: 0 0 40px hsl(199 89% 48% / 0.4);
-    --shadow-card: 0 4px 20px hsl(0 0% 0% / 0.3);
-    --shadow-lg: 0 10px 40px hsl(0 0% 0% / 0.5);
-  }
-}
-
-@layer base {
   * {
     @apply border-border;
+  }
+
+  html {
+    color-scheme: dark;
   }
 
   body {
     @apply bg-background text-foreground font-body antialiased;
     font-feature-settings: "kern" 1;
+    background: linear-gradient(135deg, hsl(var(--background)) 0%, #0f0e0d 100%);
   }
 
-  h1, h2, h3, h4, h5, h6 {
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
     @apply font-heading;
+    color: hsl(var(--foreground));
+  }
+
+  a {
+    @apply text-primary hover:text-accent transition-colors duration-300;
   }
 }
 
 @layer components {
+  /* Glass morphism dark variant */
   .glass-card {
-    @apply backdrop-blur-lg bg-card/50 border border-border/50;
+    @apply backdrop-blur-xl border border-border/40;
+    /* Use theme variables for glass card gradient */
+    background: linear-gradient(135deg, var(--theme-primary) / 6%, var(--theme-accent) / 2%);
+    box-shadow: var(--shadow-card);
   }
 
+  .glass-card:hover {
+    border-color: var(--theme-primary);
+    box-shadow: var(--shadow-hover);
+  }
+
+  /* Gradient text using theme palette */
   .gradient-text {
     @apply bg-clip-text text-transparent;
     background-image: var(--gradient-primary);
@@ -117,27 +111,276 @@ All colors MUST be HSL.
 
   .hero-gradient-text {
     @apply bg-clip-text text-transparent;
-    background-image: var(--gradient-hero);
+    background-image: var(--gradient-3d);
+    font-weight: 700;
   }
 
+  .gradient-3d-text {
+    @apply bg-clip-text text-transparent;
+    background-image: var(--gradient-3d);
+  }
+
+  /* Card with 3D lift effect */
+  .card-lift {
+    transition: var(--transition-smooth);
+    /* Use theme variables for card lift gradient */
+    background: linear-gradient(135deg, var(--theme-primary) / 4%, var(--theme-accent) / 2%);
+    border: 1px solid var(--theme-primary) / 10%;
+  }
+
+  .card-lift:hover {
+    transform: translateY(-8px) perspective(1200px) rotateX(3deg);
+    box-shadow: var(--shadow-3d);
+    border-color: var(--theme-primary);
+    /* Use theme variables for hover gradient */
+    background: linear-gradient(135deg, var(--theme-primary) / 8%, var(--theme-accent) / 4%);
+  }
+
+  /* Enhanced 3D card */
+  .card-3d {
+    @apply backdrop-blur-xl rounded-2xl;
+    /* Use theme variables for 3D card gradient */
+    background: linear-gradient(135deg, var(--theme-primary) / 5%, var(--theme-accent) / 1%);
+    border: 1px solid var(--theme-primary) / 12%;
+    transform-style: preserve-3d;
+    transition: var(--transition-smooth);
+  }
+
+  .card-3d:hover {
+    transform: translateY(-12px) rotateX(6deg) rotateY(-3deg) perspective(1500px);
+    box-shadow: var(--shadow-3d);
+    border-color: var(--theme-accent);
+    /* Use theme variables for 3D card hover gradient */
+    background: linear-gradient(135deg, var(--theme-primary) / 10%, var(--theme-accent) / 5%);
+  }
+
+  /* Glow effect on hover */
   .hover-glow {
     transition: var(--transition-smooth);
   }
 
   .hover-glow:hover {
+    box-shadow: var(--shadow-glow), var(--shadow-3d);
+  }
+
+  /* Gradient sections */
+  .gradient-section {
+    /* Use theme dark variable for section gradient */
+    background: linear-gradient(135deg, var(--theme-dark) 0%, #252220 50%, var(--theme-dark) 100%);
+  }
+
+  .gradient-section-accent {
+    /* Use theme variables for accent section */
+    background: linear-gradient(135deg, var(--theme-primary) 0%, var(--theme-accent) 100%);
+    color: var(--theme-dark);
+  }
+
+  /* Animated gradient background */
+  .animated-gradient {
+    background-size: 200% 200%;
+    animation: gradientShift 8s ease infinite;
+  }
+
+  @keyframes gradientShift {
+    0% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+    100% {
+      background-position: 0% 50%;
+    }
+  }
+
+  /* Floating animation for 3D feel */
+  .floating {
+    animation: floating 4s ease-in-out infinite;
+  }
+
+  @keyframes floating {
+    0%,
+    100% {
+      transform: translateY(0px) rotateZ(0deg);
+    }
+    25% {
+      transform: translateY(-15px) rotateZ(1deg);
+    }
+    75% {
+      transform: translateY(-8px) rotateZ(-1deg);
+    }
+  }
+
+  /* Subtle glow pulse */
+  .glow-pulse {
+    animation: glowPulseAnim 3s ease-in-out infinite;
+  }
+
+  @keyframes glowPulseAnim {
+    0%,
+    100% {
+      /* Use theme primary for glow animation */
+      box-shadow: 0 0 20px var(--theme-primary) / 0.25;
+    }
+    50% {
+      box-shadow: 0 0 35px var(--theme-primary) / 0.4, 0 0 50px var(--theme-accent) / 0.15;
+    }
+  }
+
+  /* Shimmer animation */
+  .shimmer {
+    animation: shimmerAnim 3s infinite;
+  }
+
+  @keyframes shimmerAnim {
+    0% {
+      opacity: 0.5;
+    }
+    50% {
+      opacity: 1;
+    }
+    100% {
+      opacity: 0.5;
+    }
+  }
+
+  /* Subtle slide-in animation */
+  .slide-in {
+    animation: slideInAnim 0.6s ease-out forwards;
+  }
+
+  @keyframes slideInAnim {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  /* Fade in animation */
+  .fade-in {
+    animation: fadeInAnim 0.8s ease-out forwards;
+  }
+
+  @keyframes fadeInAnim {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+
+  /* Button with theme gradient and proper hover states */
+  .btn-primary {
+    @apply text-black px-6 py-3 rounded-lg font-semibold transition-all duration-300;
+    background: var(--gradient-primary);
     box-shadow: var(--shadow-glow);
   }
 
-  .card-lift {
-    transition: var(--transition-smooth);
+  .btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-3d);
+    background: var(--gradient-accent);
   }
 
-  .card-lift:hover {
-    transform: translateY(-8px);
-    box-shadow: var(--shadow-lg);
+  .btn-primary:active {
+    transform: translateY(0);
   }
 
+  /* Floating CTA button */
   .floating-cta {
     @apply fixed bottom-8 right-8 z-50;
+  }
+
+  /* Icon button with theme colors */
+  .icon-btn {
+    @apply w-10 h-10 rounded-full flex items-center justify-center transition-all duration-300;
+    /* Use theme primary for icon button background */
+    background: var(--theme-primary) / 8%;
+    border: 1px solid var(--theme-primary) / 20%;
+    color: hsl(var(--foreground));
+  }
+
+  .icon-btn:hover {
+    /* Use theme primary for icon button hover state */
+    background: var(--theme-primary) / 15%;
+    border-color: var(--theme-primary);
+    color: var(--theme-primary);
+  }
+
+  /* Link hover effect */
+  .link-hover {
+    @apply relative transition-colors duration-300;
+    color: var(--theme-primary);
+  }
+
+  .link-hover::after {
+    content: "";
+    @apply absolute -bottom-1 left-0 w-0 h-0.5 transition-all duration-300;
+    background: var(--gradient-primary);
+  }
+
+  .link-hover:hover::after {
+    @apply w-full;
+  }
+
+  /* Backdrop blur overlay */
+  .blur-overlay {
+    backdrop-filter: blur(10px);
+    background: rgba(26, 25, 24, 0.7);
+  }
+}
+
+@layer utilities {
+  /* Gradient background utilities */
+  .bg-gradient-dark {
+    background: var(--gradient-dark);
+  }
+
+  .bg-gradient-primary {
+    background: var(--gradient-primary);
+  }
+
+  .bg-gradient-accent {
+    background: var(--gradient-accent);
+  }
+
+  .bg-gradient-3d {
+    background: var(--gradient-3d);
+  }
+
+  .bg-gradient-soft {
+    background: var(--gradient-soft);
+  }
+
+  /* Shadow utilities */
+  .shadow-glow {
+    box-shadow: var(--shadow-glow);
+  }
+
+  .shadow-3d {
+    box-shadow: var(--shadow-3d);
+  }
+
+  /* Transform utilities */
+  .perspective-1000 {
+    perspective: 1000px;
+  }
+
+  .preserve-3d {
+    transform-style: preserve-3d;
+  }
+
+  /* Text color utilities for dark backgrounds */
+  .text-dark-safe {
+    @apply text-foreground transition-colors duration-300;
+  }
+
+  .text-dark-safe:hover {
+    @apply text-primary;
   }
 }
