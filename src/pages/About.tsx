@@ -245,16 +245,25 @@ const About = () => {
       </section>
 
       {/* Values Statement */}
-      <section className="py-20 bg-gradient-to-r from-primary via-accent to-primary text-black">
-        <div className="container mx-auto px-4">
+      <section className="py-20 relative overflow-hidden">
+        <div className="absolute inset-0 bg-gradient-to-br from-dark/50 via-card/30 to-dark/50" />
+        <div className="absolute top-0 left-1/4 w-96 h-96 bg-gradient-primary opacity-5 rounded-full blur-3xl pointer-events-none"></div>
+        <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-gradient-accent opacity-5 rounded-full blur-3xl pointer-events-none"></div>
+
+        <div className="container mx-auto px-4 relative z-10">
           <div className="max-w-4xl mx-auto text-center">
-            <h2 className="text-3xl md:text-5xl font-heading font-bold mb-6">Building the Future Together</h2>
-            <p className="text-lg md:text-xl leading-relaxed opacity-90 mb-8 font-medium">
+            <h2 className="text-4xl md:text-5xl font-heading font-bold mb-8 bg-gradient-to-r from-primary via-accent to-primary bg-clip-text ">
+              Building the Future Together
+            </h2>
+            <p className="text-lg md:text-xl leading-relaxed mb-8 font-medium text-foreground/90">
               We're not just a service provider – we're your partner in digital transformation. Every project is an
               opportunity to create something exceptional, and every client relationship is built on trust,
               transparency, and shared success.
             </p>
-            <Button size="lg" className="bg-black text-primary hover:bg-black/90 font-semibold">
+            <Button
+              size="lg"
+              className="bg-gradient-to-r from-primary to-accent text-dark hover:shadow-lg hover:shadow-primary/50 font-semibold transition-all duration-300"
+            >
               Start Your Transformation Today
             </Button>
           </div>
