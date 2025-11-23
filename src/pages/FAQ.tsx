@@ -69,7 +69,7 @@ const FAQ = () => {
         <div className="container mx-auto px-4 relative z-10">
           <div className="max-w-4xl mx-auto text-center">
             <h1 className="text-4xl md:text-6xl font-heading font-bold mb-6 text-foreground hero-gradient-text">
-              Frequently Asked <span className="text-primary">Questions</span>
+              Frequently Asked <span className="hero-gradient-text">Questions</span>
             </h1>
             <p className="text-lg md:text-xl text-muted-foreground/90">
               Find answers to common questions about our services, processes, and policies
@@ -106,7 +106,7 @@ const FAQ = () => {
       <section className="py-20 bg-gradient-to-br from-primary/2 via-card/40 to-accent/2">
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto text-center">
-            <h2 className="text-3xl md:text-4xl font-heading font-bold mb-4 text-foreground">Still Have Questions?</h2>
+            <h2 className="text-3xl md:text-4xl font-heading font-bold mb-4 text-foreground">Still Have <span className="hero-gradient-text">Questions?</span></h2>
             <p className="text-muted-foreground text-lg mb-8">
               Can't find the answer you're looking for? Our team is here to help.
             </p>

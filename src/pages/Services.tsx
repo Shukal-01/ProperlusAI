@@ -221,7 +221,7 @@ const Services = () => {
         <div className="container mx-auto px-4 relative z-10">
           <div className="max-w-4xl mx-auto text-center">
             <h1 className="text-4xl md:text-6xl font-heading font-bold mb-6 text-foreground hero-gradient-text">
-              Our Services
+              Our <span className="hero-gradient-text">Services</span>
             </h1>
             <p className="text-lg md:text-xl text-muted-foreground/90 leading-relaxed">
               Comprehensive AI-powered solutions designed to accelerate your business growth and digital transformation.
@@ -244,7 +244,7 @@ const Services = () => {
                     className="flex flex-col items-center gap-2 py-4 data-[state=active]:bg-gradient-primary data-[state=active]:text-black rounded-lg transition-all"
                   >
                     <Icon className="w-5 h-5" />
-                    <span className="text-sm font-medium">{category.name}</span>
+                    <span className="text-md font-medium">{category.name}</span>
                   </TabsTrigger>
                 )
               })}
@@ -298,7 +298,7 @@ const Services = () => {
           <div className="max-w-6xl mx-auto">
             <div className="text-center mb-16">
               <h2 className="text-3xl md:text-5xl font-heading font-bold mb-6 text-foreground">
-                What Are You Looking For?
+                What Are You <span className="hero-gradient-text">Looking For?</span>
               </h2>
               <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
                 Our AI-powered services can be customized and combined to create the perfect solution for your unique
@@ -355,7 +355,7 @@ const Services = () => {
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
               <div>
                 <h2 className="text-3xl md:text-5xl font-heading font-bold mb-8 text-foreground">
-                  Transform Your Business Today
+                  Transform Your <span className="hero-gradient-text">Business Today</span>
                 </h2>
                 <p className="text-lg text-muted-foreground mb-8">
                   Join hundreds of successful businesses that have accelerated their growth with PropelusAI's expert
@@ -415,7 +415,7 @@ const Services = () => {
         <div className="container mx-auto px-4">
           <div className="max-w-6xl mx-auto">
             <div className="text-center mb-16">
-              <h2 className="text-3xl md:text-5xl font-heading font-bold mb-4 text-foreground">Our Proven Process</h2>
+              <h2 className="text-3xl md:text-5xl font-heading font-bold mb-4 text-foreground">Our Proven <span className="hero-gradient-text">Process</span></h2>
               <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
                 We follow a systematic approach to ensure every project delivers exceptional results and exceeds your
                 expectations.
@@ -437,7 +437,7 @@ const Services = () => {
                         <div className="relative w-24 h-24 rounded-full bg-gradient-primary flex items-center justify-center">
                           <Icon className="w-10 h-10 text-black" />
                         </div>
-                        <div className="absolute -top-2 -right-2 bg-primary text-white rounded-full w-8 h-8 flex items-center justify-center text-sm font-bold">
+                        <div className="absolute -top-2 -right-3 bg-primary text-white rounded-full w-8 h-8 flex items-center justify-center text-md font-bold">
                           {step.number}
                         </div>
                       </div>
@@ -457,7 +457,7 @@ const Services = () => {
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto text-center">
             <h2 className="text-3xl md:text-5xl font-heading font-bold mb-6 text-foreground">
-              Ready to Transform Your Business?
+              Ready to Transform <span className="hero-gradient-text">Your Business?</span>
             </h2>
             <p className="text-lg text-muted-foreground mb-8">
               Get a free consultation to discover which services are right for you

@@ -27,8 +27,8 @@ const Footer = () => {
           </div>
 
           <div>
-            <h3 className="font-heading font-semibold mb-6 text-foreground text-sm uppercase tracking-wide">
-              Quick Links
+            <h3 className="font-heading font-semibold mb-6 text-foreground text-md uppercase tracking-wide">
+              <span className="hero-gradient-text">Quick Links</span>
             </h3>
             <ul className="space-y-3">
               {["Home", "About", "Services", "Contact", "FAQ"].map((item) => (
@@ -48,8 +48,8 @@ const Footer = () => {
           </div>
 
           <div>
-            <h3 className="font-heading font-semibold mb-6 text-foreground text-sm uppercase tracking-wide">
-              Services
+            <h3 className="font-heading font-semibold mb-6 text-foreground text-md uppercase tracking-wide">
+              <span className="hero-gradient-text">Services</span>
             </h3>
             <ul className="space-y-3 text-sm">
               {[
@@ -72,7 +72,7 @@ const Footer = () => {
           </div>
 
           <div>
-            <h3 className="font-heading font-semibold mb-6 text-foreground text-sm uppercase tracking-wide">Contact</h3>
+            <h3 className="font-heading font-semibold mb-6 text-foreground text-md uppercase tracking-wide"><span className="hero-gradient-text">Contact</span></h3>
             <ul className="space-y-4">
               <li className="flex items-start gap-3 group">
                 <Mail className="w-4 h-4 mt-0.5 text-primary flex-shrink-0 group-hover:text-accent transition-colors" />

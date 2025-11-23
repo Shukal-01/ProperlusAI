@@ -202,7 +202,7 @@ const Home = () => {
       <section className="py-24 md:py-32 relative bg-gradient-to-b from-background via-primary/2 to-background">
         <div className="container mx-auto px-4">
           <div className="text-center mb-16 md:mb-20">
-            <h2 className="text-4xl md:text-6xl font-heading font-bold mb-6 text-foreground">Our Services</h2>
+            <h2 className="text-4xl md:text-6xl font-heading font-bold mb-6 text-foreground">Our <span className="hero-gradient-text">Services</span></h2>
             <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
               Comprehensive AI-powered solutions designed to transform your business
             </p>
@@ -246,7 +246,7 @@ const Home = () => {
       <section className="py-24 md:py-32 relative bg-gradient-to-b from-primary/3 via-transparent to-accent/2">
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-6xl font-heading font-bold mb-6 text-foreground">Featured Services</h2>
+            <h2 className="text-4xl md:text-6xl font-heading font-bold mb-6 text-foreground">Featured <span className="hero-gradient-text">Services</span></h2>
             <p className="text-muted-foreground text-lg max-w-3xl mx-auto">
               Discover our comprehensive range of AI-driven solutions designed to transform your operations
             </p>
@@ -259,7 +259,7 @@ const Home = () => {
 
               <div className="relative z-10 flex flex-col h-full">
                 <h3 className="text-2xl md:text-3xl font-heading font-bold mb-3 text-foreground">
-                  AI-Based Website Building & Hosting
+                  <span className="hero-gradient-text">AI-Based Website Building & Hosting</span>
                 </h3>
                 <p className="text-muted-foreground mb-8 leading-relaxed">
                   Transform your online presence with responsive, SEO-optimized, AI-powered websites hosted on enterprise-grade servers
@@ -292,7 +292,7 @@ const Home = () => {
 
               <div className="relative z-10 flex flex-col h-full">
                 <h3 className="text-2xl md:text-3xl font-heading font-bold mb-3 text-foreground">
-                  AI-Based Mobile Application Development
+                  <span className="hero-gradient-text">AI-Based Mobile Application Development</span>
                 </h3>
                 <p className="text-muted-foreground mb-8 leading-relaxed">
                   Launch AI-powered mobile apps with smart recommendations, real-time analytics, and cross-platform performance
@@ -334,7 +334,7 @@ const Home = () => {
       <section className="py-24 md:py-32 relative bg-gradient-to-b from-background to-primary/2">
         <div className="container mx-auto px-4">
           <div className="text-center mb-20">
-            <h2 className="text-4xl md:text-6xl font-heading font-bold mb-6 text-foreground">Our Process</h2>
+            <h2 className="text-4xl md:text-6xl font-heading font-bold mb-6 text-foreground">Our <span className="hero-gradient-text">Process</span></h2>
             <p className="text-muted-foreground text-lg">A proven methodology for delivering exceptional results</p>
           </div>
 
@@ -365,7 +365,7 @@ const Home = () => {
       <section className="py-24 md:py-32 relative bg-gradient-to-b from-primary/3 via-transparent to-accent/3 section-accent-highlight">
         <div className="container mx-auto px-4">
           <div className="text-center mb-20">
-            <h2 className="text-4xl md:text-6xl font-heading font-bold mb-6 text-foreground">What Our Clients Say</h2>
+            <h2 className="text-4xl md:text-6xl font-heading font-bold mb-6 text-foreground">What Our <span className="hero-gradient-text">Clients Say</span></h2>
             <p className="text-muted-foreground text-lg">
               Trusted by creators, entrepreneurs, and businesses worldwide
             </p>
@@ -382,12 +382,12 @@ const Home = () => {
                   <div className="flex items-center mb-6">
                     <img
                       src={testimonial.image || "/placeholder.svg"}
-                      alt={testimonial.name}
-                      className="w-14 h-14 rounded-full object-cover mr-4 border-2 border-accent/70 group-hover:border-accent transition-colors duration-300"
+                      alt= {testimonial.name}
+                      className="w-14 h-14 rounded-full object-cover  mr-4 border-2 border-accent/70 group-hover:border-accent transition-colors duration-300"
                     />
                     <div>
                       <h4 className="font-semibold text-foreground group-hover:text-accent transition-colors duration-300">
-                        {testimonial.name}
+                        <span className="hero-gradient-text">{testimonial.name}</span>
                       </h4>
                       <p className="text-accent font-medium text-sm group-hover:text-primary transition-colors duration-300">
                         {testimonial.title}
@@ -418,7 +418,7 @@ const Home = () => {
             {/* Left content */}
             <div>
               <h2 className="text-4xl md:text-6xl font-heading font-bold mb-8 text-foreground leading-tight">
-                Why Choose PropelusAI?
+                Why Choose <span className="hero-gradient-text">PropelusAI?</span>
               </h2>
               <p className="text-muted-foreground text-lg mb-10 leading-relaxed">
                 We understand the unique challenges faced by creators, coaches, solopreneurs, and growing companies. Our
@@ -481,7 +481,7 @@ const Home = () => {
               <div className="absolute inset-0 bg-gradient-to-br from-primary/10 to-accent/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
               <div className="relative z-10 text-center">
                 <h2 className="text-3xl md:text-5xl font-heading font-bold mb-6 text-foreground">
-                  Ready to Transform Your Business?
+                  Ready to Transform <br /><span className="hero-gradient-text">Your Business?</span>
                 </h2>
                 <p className="text-muted-foreground text-lg mb-10 max-w-2xl mx-auto leading-relaxed">
                   Join hundreds of successful businesses that have already partnered with us for AI-driven growth and

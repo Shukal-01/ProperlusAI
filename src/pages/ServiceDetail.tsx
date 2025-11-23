@@ -23,6 +23,23 @@ const ServiceDetail = () => {
     )
   }
 
+  const SplitTitle = ({ text }: { text: string }) => {
+  if (!text) return null;
+
+  const words = text.trim().split(/\s+/);
+  const mid = Math.ceil(words.length / 2);
+
+  const first = words.slice(0, mid).join(" ");
+  const second = words.slice(mid).join(" ");
+
+    return (
+      <h1 className="text-4xl md:text-6xl font-heading font-bold mb-6 text-foreground">
+        <span>{first} </span>
+        <span className="hero-gradient-text">{second}</span>
+      </h1>
+    );
+  };
+
   return (
     <div className="min-h-screen pt-20 bg-gradient-to-b from-background via-card/30 to-accent/5">
       {/* Back Button */}
@@ -43,9 +60,10 @@ const ServiceDetail = () => {
 
         <div className="container mx-auto px-4 relative z-10">
           <div className="max-w-4xl mx-auto">
-            <h1 className="text-4xl md:text-6xl font-heading font-bold mb-6 text-foreground hero-gradient-text">
+            {/* <h1 className="text-4xl md:text-6xl font-heading font-bold mb-6 text-foreground hero-gradient-text">
               {service.title}
-            </h1>
+            </h1> */}
+            <SplitTitle text={service.title} />
             <p className="text-lg md:text-xl text-muted-foreground/90 leading-relaxed">{service.overview}</p>
           </div>
         </div>
@@ -201,7 +219,7 @@ const ServiceDetail = () => {
         <div className="container mx-auto px-4 relative z-10">
           <div className="max-w-4xl mx-auto text-center">
             <h2 className="text-3xl md:text-5xl font-heading font-bold mb-6 text-foreground hero-gradient-text">
-              Ready to Get Started?
+              Ready to <span className="hero-gradient-text">Get Started?</span>
             </h2>
             <p className="text-lg md:text-xl text-muted-foreground/90 mb-8 font-medium">
               Let's discuss how this service can transform your business and drive measurable results.

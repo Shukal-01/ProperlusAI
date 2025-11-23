@@ -69,7 +69,7 @@ const About = () => {
         <div className="container mx-auto px-4 relative z-10">
           <div className="max-w-4xl mx-auto text-center">
             <h1 className="text-4xl md:text-6xl font-heading font-bold mb-6 text-foreground hero-gradient-text">
-              Who We <span className="text-primary">Are</span>
+              Who <span className="hero-gradient-text">We Are</span>
             </h1>
             <p className="text-lg md:text-xl text-muted-foreground/90 leading-relaxed">
               PropelusAI is a digital transformation and AI solutions company helping businesses scale using modern
@@ -88,7 +88,7 @@ const About = () => {
                 Our Mission
               </div>
               <h2 className="text-3xl md:text-5xl font-heading font-bold text-foreground">
-                Making AI-Powered Solutions Accessible
+                Making AI-Powered <span className="hero-gradient-text">Solution Accessible</span>
               </h2>
               <p className="text-muted-foreground text-lg leading-relaxed">
                 Our mission is to make AI-powered digital solutions accessible, affordable, and impactful for businesses
@@ -112,7 +112,7 @@ const About = () => {
         <div className="container mx-auto px-4">
           <div className="max-w-6xl mx-auto">
             <div className="text-center mb-16">
-              <h2 className="text-3xl md:text-5xl font-heading font-bold mb-4 text-foreground">What We Do</h2>
+              <h2 className="text-3xl md:text-5xl font-heading font-bold mb-4 text-foreground">What <span className="hero-gradient-text">We Do</span></h2>
               <p className="text-muted-foreground text-lg max-w-3xl mx-auto">
                 We combine marketing, IT, automation, and AI to help businesses grow faster and smarter
               </p>
@@ -141,7 +141,7 @@ const About = () => {
                   className="card-lift border-primary/30 bg-gradient-to-br from-card/50 to-card/30 backdrop-blur hover:border-accent/60 hover:shadow-lg hover:shadow-primary/20 transition-all duration-300"
                 >
                   <CardContent className="pt-6">
-                    <h3 className="text-xl font-heading font-semibold mb-3 text-accent">{item.title}</h3>
+                    <h3 className="text-xl font-heading font-semibold mb-3 text-accent"><span className="hero-gradient-text">{item.title}</span></h3>
                     <p className="text-muted-foreground leading-relaxed">{item.description}</p>
                   </CardContent>
                 </Card>
@@ -156,7 +156,7 @@ const About = () => {
         <div className="container mx-auto px-4">
           <div className="max-w-6xl mx-auto">
             <div className="text-center mb-16">
-              <h2 className="text-3xl md:text-5xl font-heading font-bold mb-4 text-foreground">Our Core Values</h2>
+              <h2 className="text-3xl md:text-5xl font-heading font-bold mb-4 text-foreground">Our Core <span className="hero-gradient-text">Values</span></h2>
               <p className="text-muted-foreground text-lg">Principles that guide everything we do</p>
             </div>
 
@@ -186,7 +186,7 @@ const About = () => {
         <div className="container mx-auto px-4">
           <div className="max-w-6xl mx-auto">
             <div className="text-center mb-16">
-              <h2 className="text-3xl md:text-5xl font-heading font-bold mb-4 text-foreground">Why Choose Us?</h2>
+              <h2 className="text-3xl md:text-5xl font-heading font-bold mb-4 text-foreground">Why <span className="hero-gradient-text">Choose Us?</span></h2>
               <p className="text-muted-foreground text-lg">
                 We stand out with our commitment to excellence and innovation
               </p>
@@ -222,7 +222,7 @@ const About = () => {
                 Our Impact
               </div>
               <h2 className="text-3xl md:text-5xl font-heading font-bold text-foreground">
-                Growing Businesses Since 2018
+                Growing Businesses <span className="hero-gradient-text">Since 2018</span>
               </h2>
               <p className="text-muted-foreground text-lg leading-relaxed">
                 Over the past 5+ years, we've helped hundreds of businesses achieve their goals through innovative
@@ -254,7 +254,7 @@ const About = () => {
       </section>
 
       {/* Values Statement */}
-      <section className="py-20 relative overflow-hidden">
+      <section className="py-20 relative overflow-hidden  border-white/50">
         <div className="absolute inset-0 bg-gradient-to-br from-dark/50 via-card/30 to-dark/50" />
         <div className="absolute top-0 left-1/4 w-96 h-96 bg-gradient-primary opacity-5 rounded-full blur-3xl pointer-events-none"></div>
         <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-gradient-accent opacity-5 rounded-full blur-3xl pointer-events-none"></div>
@@ -262,18 +262,18 @@ const About = () => {
         <div className="container mx-auto px-4 relative z-10">
           <div className="max-w-4xl mx-auto text-center">
             <h2 className="text-4xl md:text-5xl font-heading font-bold mb-8 bg-gradient-to-r from-primary via-accent to-primary bg-clip-text">
-              Building the Future Together
+              Building the <span className="hero-gradient-text">Future Together</span>
             </h2>
-            <p className="text-lg md:text-xl leading-relaxed mb-8 font-medium text-foreground/90">
+            <p className="text-lg md:text-xl leading-relaxed mb-8 font-medium text-foreground/70">
               We're not just a service provider – we're your partner in digital transformation. Every project is an
               opportunity to create something exceptional, and every client relationship is built on trust,
               transparency, and shared success.
             </p>
             <Button
               size="lg"
-              className="bg-gradient-to-r from-primary to-accent text-dark hover:shadow-lg hover:shadow-primary/50 font-semibold transition-all duration-300"
+              className="bg-gradient-to-r bg-gradient-primary from-primary to-accent text-dark hover:shadow-lg hover:shadow-primary/50 font-semibold transition-all duration-300"
             >
-              Start Your Transformation Today
+              <span className="text-black text-base">Start Your Transformation Today</span>
             </Button>
           </div>
         </div>

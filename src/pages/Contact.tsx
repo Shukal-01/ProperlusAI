@@ -72,7 +72,7 @@ const Contact = () => {
         <div className="container mx-auto px-4 relative z-10">
           <div className="max-w-4xl mx-auto text-center">
             <h1 className="text-4xl md:text-6xl font-heading font-bold mb-6 text-foreground hero-gradient-text">
-              Get in <span className="text-primary">Touch</span>
+              Get in <span className="hero-gradient-text">Touch</span>
             </h1>
             <p className="text-lg md:text-xl text-muted-foreground/90">
               Ready to transform your business? Let's discuss how we can help you achieve your goals.
@@ -112,7 +112,7 @@ const Contact = () => {
             <div>
               <Card className="border-2 border-primary/40 bg-gradient-to-br from-card/80 to-card/60 hover:border-primary/60 transition-all">
                 <CardHeader>
-                  <CardTitle className="text-2xl text-foreground">Send Us a Message</CardTitle>
+                  <CardTitle className="text-2xl text-foreground"><span className="hero-gradient-text">Send Us a Message</span></CardTitle>
                   <CardDescription className="text-muted-foreground">
                     Fill out the form below and we'll get back to you within 24 hours
                   </CardDescription>
@@ -213,7 +213,7 @@ const Contact = () => {
             {/* Contact Info */}
             <div className="space-y-8">
               <div>
-                <h2 className="text-3xl font-heading font-bold mb-6 text-foreground">Contact Information</h2>
+                <h2 className="text-3xl font-heading font-bold mb-6 text-foreground">Contact <span className="hero-gradient-text">Information</span></h2>
                 <p className="text-muted-foreground mb-8">
                   We're here to help! Reach out through any of the following channels.
                 </p>
@@ -268,7 +268,7 @@ const Contact = () => {
               </div>
 
               <div className="bg-gradient-to-br from-primary/8 to-accent/4 rounded-2xl p-8 border border-primary/20 hover:border-primary/40 transition-all">
-                <h3 className="text-xl font-heading font-semibold mb-2 text-foreground">Response Time</h3>
+                <h3 className="text-xl font-heading font-semibold mb-2 text-foreground"><span className="hero-gradient-text">Response Time</span></h3>
                 <p className="text-muted-foreground">
                   We typically respond to all inquiries within 24 hours during business days. For urgent matters, please
                   call us directly.
@@ -284,7 +284,7 @@ const Contact = () => {
         <div className="container mx-auto px-4">
           <div className="max-w-6xl mx-auto">
             <div className="text-center mb-16">
-              <h2 className="text-3xl md:text-5xl font-heading font-bold mb-4 text-foreground">Frequently Asked</h2>
+              <h2 className="text-3xl md:text-5xl font-heading font-bold mb-4 text-foreground">Frequently <span className="hero-gradient-text">Asked</span></h2>
               <p className="text-muted-foreground text-lg">Common questions about our services</p>
             </div>
 
@@ -312,7 +312,7 @@ const Contact = () => {
                   className="card-lift border-primary/20 bg-card/60 hover:border-accent/40 transition-all"
                 >
                   <CardContent className="pt-6">
-                    <h3 className="text-lg font-heading font-semibold mb-3 text-primary">{item.q}</h3>
+                    <h3 className="text-lg font-heading font-semibold mb-3 text-primary"><span className="hero-gradient-text">{item.q}</span></h3>
                     <p className="text-muted-foreground leading-relaxed">{item.a}</p>
                   </CardContent>
                 </Card>

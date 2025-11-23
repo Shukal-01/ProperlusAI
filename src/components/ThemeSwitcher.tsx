@@ -19,11 +19,11 @@ const ThemeSwitcher = () => {
     const [isOpen, setIsOpen] = useState(false)
 
     const themeOptions: { name: ThemeName; label: string; emoji: string }[] = [
-        { name: "golden-warm", label: "Golden Warm", emoji: "✨" },
+        // { name: "golden-warm", label: "Golden Warm", emoji: "✨" },
         { name: "royal-purple", label: "Royal Purple", emoji: "👑" },
         { name: "crimson-dark", label: "Crimson Dark", emoji: "🔴" },
         { name: "lime-fresh", label: "Lime Fresh", emoji: "🌿" },
-        { name: "grape-magenta", label: "Grape Magenta", emoji: "💜" },
+        // { name: "grape-magenta", label: "Grape Magenta", emoji: "💜" },
     ]
 
     return (

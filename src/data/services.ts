@@ -61,7 +61,7 @@ export const servicesData: Record<
     },
 
     "mobile-app-development": {
-        title: "Mobile App Development",
+        title: "AI-Based Mobile App Development",
         overview: "Cross-platform iOS & Android apps with fast performance and modern UI.",
         description:
             "We build high-performance mobile apps using React Native and AI-driven automation. Perfect for startups, SaaS products, and enterprise apps.",
