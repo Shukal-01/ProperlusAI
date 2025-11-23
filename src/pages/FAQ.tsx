@@ -28,7 +28,7 @@ const FAQ = () => {
     {
       question: "Can we customize service packages?",
       answer:
-        "Absolutely! We understand that every business has unique needs. All our service packages are fully customizable. We can mix and match services, adjust deliverables, and create a solution that perfectly fits your requirements and budget.",
+        "We understand that every business has unique needs. All our service packages are fully customizable. We can mix and match services, adjust deliverables, and create a solution that perfectly fits your requirements and budget.",
     },
     {
       question: "What technologies do you use?",
@@ -58,13 +58,13 @@ const FAQ = () => {
   ]
 
   return (
-    <div className="min-h-screen pt-20 bg-gradient-to-b from-background via-card/20 to-background">
+    <div className="min-h-screen pt-20 bg-gradient-to-b from-background via-card/20 to-accent/5">
       <section className="relative py-20 md:py-32 overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-br from-primary/8 via-accent/3 to-transparent" />
 
         {/* Animated background elements */}
-        <div className="absolute top-20 left-10 w-64 h-64 bg-gradient-primary opacity-4 rounded-full blur-3xl animate-pulse pointer-events-none"></div>
-        <div className="absolute -bottom-32 -right-32 w-96 h-96 bg-gradient-accent opacity-3 rounded-full blur-3xl pointer-events-none"></div>
+        <div className="absolute top-20 left-10 w-64 h-64 bg-gradient-3d opacity-1 rounded-full blur-3xl animate-pulse pointer-events-none"></div>
+        <div className="absolute -bottom-32 -right-32 w-96 h-96 bg-gradient-3d opacity-3 rounded-full blur-2xl pointer-events-none"></div>
 
         <div className="container mx-auto px-4 relative z-10">
           <div className="max-w-4xl mx-auto text-center">
@@ -78,11 +78,11 @@ const FAQ = () => {
         </div>
       </section>
 
-      {/* FAQ Section */}
-      <section className="py-20">
+      {/* FAQ Section - CHANGE: Improved card styling with better spacing */}
+      <section className="py-20 bg-gradient-to-b from-primary/2 via-background to-accent/2">
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto">
-            <Card className="border-2 border-primary/40 bg-gradient-to-br from-card/80 to-card/60 p-6 md:p-8">
+            <Card className="border-2 border-primary/40 bg-gradient-to-br from-card/80 to-card/60 p-6 md:p-8 hover:border-primary/60 transition-all">
               <Accordion type="single" collapsible className="space-y-4">
                 {faqs.map((faq, index) => (
                   <AccordionItem key={index} value={`item-${index}`} className="border-b-0">
@@ -111,14 +111,18 @@ const FAQ = () => {
               Can't find the answer you're looking for? Our team is here to help.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button asChild size="lg" className="bg-gradient-primary text-black font-semibold hover-glow">
+              <Button
+                asChild
+                size="lg"
+                className="bg-gradient-primary text-black font-semibold hover-glow hover:text-black"
+              >
                 <Link to="/contact">Contact Support</Link>
               </Button>
               <Button
                 asChild
                 size="lg"
                 variant="outline"
-                className="border-primary/40 text-primary hover:bg-primary/10 bg-transparent"
+                className="border-primary/40 text-primary hover:bg-primary/10 bg-transparent hover:text-primary"
               >
                 <a href="mailto:support@propelusai.com">Email Us</a>
               </Button>

@@ -1,4 +1,4 @@
-/* Removed old Vite template styles and added new theme-aware animations */
+/* Updated keyframes and animations for refined design */
 
 @keyframes shimmer {
   0% {
@@ -57,6 +57,21 @@
   }
 }
 
+@keyframes subtle-float {
+  0%,
+  100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-8px);
+  }
+}
+
+.subtle-float {
+  animation: subtle-float 3s ease-in-out infinite;
+}
+
+/* Enhanced gradient backgrounds */
 .bg-gradient-primary {
   background: linear-gradient(135deg, var(--theme-light), var(--theme-accent));
 }
@@ -77,4 +92,9 @@
 .transform-gpu {
   transform: translateZ(0);
   backface-visibility: hidden;
+}
+
+/* Smooth transitions for all interactive elements */
+.smooth-transition {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }

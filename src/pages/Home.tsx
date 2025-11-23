@@ -2,7 +2,6 @@
 
 import { Link } from "react-router-dom"
 import { Button } from "@/components/ui/button"
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import {
   Globe,
   Megaphone,
@@ -53,7 +52,7 @@ const Home = () => {
     {
       icon: Megaphone,
       title: "AI Marketing & Advertising",
-      description: "Data-driven campaigns that maximize ROI and accelerate growth.",
+      description: "Data-driven campaigns that maximize ROI and accelerate growth of Artificial Intelligence.",
       link: "/services#marketing",
     },
     {
@@ -140,151 +139,166 @@ const Home = () => {
   ]
 
   return (
-    <div className="min-h-screen">
-      {/* Hero Section */}
-      <section className="relative pt-32 pb-20 md:pt-40 md:pb-32 overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-br from-primary/4 via-accent/2 to-transparent" />
-
-        {/* Animated background blobs */}
-        <div className="absolute top-20 left-10 w-72 h-72 bg-gradient-primary opacity-4 rounded-full blur-3xl animate-pulse"></div>
-        <div className="absolute -bottom-32 -right-32 w-96 h-96 bg-gradient-accent opacity-3 rounded-full blur-3xl animated-gradient"></div>
+    <div className="min-h-screen bg-gradient-to-b from-background via-background to-accent/5">
+      {/* CHANGE: Hero section with improved gradient background */}
+      <section className="relative pt-32 pb-24 md:pt-48 md:pb-36 overflow-hidden bg-gradient-to-br from-primary/5 via-transparent to-accent/5">
+        
+        <div className="absolute top-20 left-10 w-64 h-64 bg-gradient-3d opacity-1 rounded-full blur-3xl animate-pulse pointer-events-none"></div>
+        <div className="absolute -bottom-32 -right-32 w-96 h-96 bg-gradient-3d opacity-3 rounded-full blur-2xl pointer-events-none"></div>
 
         <div className="container mx-auto px-4 relative z-10">
-          <div className="max-w-4xl mx-auto text-center fade-in">
-            <h1 className="text-4xl md:text-6xl lg:text-7xl font-heading font-bold mb-6 leading-tight text-foreground">
-              Empowering Businesses with <span className="hero-gradient-text">AI-Driven Marketing</span> &{" "}
-              <span className="hero-gradient-text">IT Solutions</span>
+          <div className="max-w-5xl mx-auto text-center">
+            <h1 className="text-5xl md:text-7xl lg:text-7xl font-heading font-bold mb-8 leading-tight text-foreground tracking-tight">
+              Empowering Businesses with <span className="hero-gradient-text block mt-2">AI-Driven Solutions</span>
             </h1>
-            <p className="text-lg md:text-xl text-muted-foreground mb-8 max-w-2xl mx-auto">
+            <p className="text-lg md:text-xl text-muted-foreground mb-10 max-w-3xl mx-auto leading-relaxed">
               We help creators, startups, and companies accelerate growth with smart, scalable, AI-powered digital
               solutions.
             </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button asChild size="lg" className="hover-glow bg-gradient-primary text-black font-semibold">
-                <Link to="/contact">
+            <div className="flex flex-col sm:flex-row gap-6 justify-center mb-20">
+              <Button
+                asChild
+                size="lg"
+                className="hover-glow bg-gradient-primary text-black font-semibold px-8 text-base h-12 hover:text-black"
+              >
+                <Link to="/contact" className="flex items-center gap-2">
                   Get Free Consultation
-                  <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
+                  <ArrowRight className="w-5 h-5" />
                 </Link>
               </Button>
               <Button
                 asChild
                 size="lg"
                 variant="outline"
-                className="border-primary/40 hover:bg-primary/10 bg-transparent text-primary hover:text-primary"
+                className="border-primary/40 hover:bg-primary/10 bg-transparent text-primary hover:text-primary px-8 text-base h-12 hover:border-primary/60"
               >
                 <Link to="/services">View Services</Link>
               </Button>
             </div>
-          </div>
 
-          {/* Stats */}
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-20 max-w-4xl mx-auto">
-            {[
-              { value: counters.success, suffix: "%", label: "Success Rate" },
-              { value: counters.clients, suffix: "+", label: "Happy Clients" },
-              { value: counters.projects, suffix: "+", label: "Projects Delivered" },
-            ].map((stat, index) => (
-              <div key={index} className="text-center p-6 rounded-2xl card-3d card-lift">
-                <div className="text-4xl md:text-5xl font-heading font-bold gradient-text mb-2">
-                  {stat.value}
-                  {stat.suffix}
+            <div className="grid grid-cols-3 gap-4 md:gap-8 max-w-3xl mx-auto">
+              {[
+                { value: counters.success, suffix: "%", label: "Success Rate" },
+                { value: counters.clients, suffix: "+", label: "Happy Clients" },
+                { value: counters.projects, suffix: "+", label: "Projects Delivered" },
+              ].map((stat, index) => (
+                <div
+                  key={index}
+                  className="p-4 md:p-8 rounded-2xl card-3d border border-primary/20 bg-card/40 backdrop-blur-sm hover:border-primary/40 transition-all duration-300"
+                >
+                  <div className="text-3xl md:text-5xl font-heading font-bold gradient-text mb-2">
+                    {stat.value}
+                    {stat.suffix}
+                  </div>
+                  <div className="text-muted-foreground text-xs md:text-sm text-balance">{stat.label}</div>
                 </div>
-                <div className="text-muted-foreground">{stat.label}</div>
-              </div>
-            ))}
+              ))}
+            </div>
           </div>
         </div>
       </section>
 
-      {/* Services Overview */}
-      <section className="py-20 bg-gradient-to-b from-primary/2 via-transparent to-accent/2 relative">
-        <div className="absolute left-0 top-0 w-full h-96 bg-gradient-to-br from-primary/3 via-accent/2 to-transparent pointer-events-none" />
-
-        <div className="container mx-auto px-4 relative z-10">
-          <div className="text-center mb-16 fade-in">
-            <h2 className="text-3xl md:text-5xl font-heading font-bold mb-4 text-foreground">Our Services Overview</h2>
+      {/* Services Section - CHANGE: Added subtle gradient background */}
+      <section className="py-24 md:py-32 relative bg-gradient-to-b from-background via-primary/2 to-background">
+        <div className="container mx-auto px-4">
+          <div className="text-center mb-16 md:mb-20">
+            <h2 className="text-4xl md:text-6xl font-heading font-bold mb-6 text-foreground">Our Services</h2>
             <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
               Comprehensive AI-powered solutions designed to transform your business
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+          {/* <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-12"> */}
+            <div className="grid md:grid-cols-2 gap-7 max-w-6xl mx-auto items-stretch">
+
             {services.map((service, index) => {
               const Icon = service.icon
               return (
-                <Card key={index} className="card-3d card-lift border-primary/20 bg-card/50 backdrop-blur">
-                  <CardHeader>
-                    <div className="w-12 h-12 rounded-lg bg-gradient-primary flex items-center justify-center mb-4 glow-pulse">
+                <div
+                  key={index}
+                  className="group relative rounded-2xl p-6 md:p-8 border border-primary/20 bg-card/40 backdrop-blur hover:border-primary/60 hover:bg-card/60 transition-all duration-300 cursor-pointer overflow-hidden"
+                >
+                  <div className="absolute inset-0 bg-gradient-to-br from-primary/5 to-accent/2 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                  <div className="relative z-10">
+                    <div className="w-12 h-12 rounded-xl bg-gradient-primary flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300 shadow-lg">
                       <Icon className="w-6 h-6 text-black" />
                     </div>
-                    <CardTitle className="text-xl text-foreground">{service.title}</CardTitle>
-                    <CardDescription className="text-base text-muted-foreground">{service.description}</CardDescription>
-                  </CardHeader>
-                  <CardContent>
+                    <h3 className="text-lg md:text-xl font-heading font-semibold mb-3 text-foreground group-hover:text-primary transition-colors">
+                      {service.title}
+                    </h3>
+                    <p className="text-sm text-muted-foreground mb-6 leading-relaxed">{service.description}</p>
                     <Link
                       to={service.link}
-                      className="text-primary hover:text-accent font-medium inline-flex items-center group transition-colors"
+                      className="inline-flex items-center gap-2 text-primary hover:text-accent font-medium text-sm group-hover:gap-3 transition-all duration-300"
                     >
                       Learn More
-                      <ArrowRight className="ml-1 w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                      <ArrowRight className="w-4 h-4" />
                     </Link>
-                  </CardContent>
-                </Card>
+                  </div>
+                </div>
               )
             })}
           </div>
         </div>
       </section>
 
-      {/* AI Service Portfolio */}
-      <section className="py-20 relative">
+      {/* Featured Services - CHANGE: Improved gradient background */}
+      <section className="py-24 md:py-32 relative bg-gradient-to-b from-primary/3 via-transparent to-accent/2">
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-5xl font-heading font-bold mb-4 text-foreground">
-              AI-Powered Service Portfolio
-            </h2>
+            <h2 className="text-4xl md:text-6xl font-heading font-bold mb-6 text-foreground">Featured Services</h2>
             <p className="text-muted-foreground text-lg max-w-3xl mx-auto">
-              Discover our comprehensive range of AI-driven solutions designed to transform your operations at
-              affordable rates
+              Discover our comprehensive range of AI-driven solutions designed to transform your operations
             </p>
           </div>
 
-          <div className="grid md:grid-cols-2 gap-8 max-w-6xl mx-auto">
-            {/* Featured Service 1 */}
-            <Card className="card-3d card-lift border-2 border-primary/30">
-              <CardHeader>
-                <CardTitle className="text-2xl text-foreground">AI-Based Website Building & Hosting</CardTitle>
-                <CardDescription className="text-base text-muted-foreground">
-                  Transform your online presence with responsive, SEO-optimized, AI-powered websites hosted on
-                  enterprise-grade servers
-                </CardDescription>
-              </CardHeader>
-              <CardContent>
-                <div className="space-y-3 mb-6">
-                  {features.slice(0, 6).map((feature, index) => (
-                    <div key={index} className="flex items-start space-x-2">
+          <div className="grid md:grid-cols-2 gap-8 max-w-6xl mx-auto items-stretch">
+            {/* Card 1 */}
+            <div className="group relative rounded-3xl p-8 md:p-10 border-2 border-primary/30 bg-card/50 backdrop-blur hover:border-primary/60 transition-all duration-300 overflow-hidden">
+              <div className="absolute inset-0 bg-gradient-to-br from-primary/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+
+              <div className="relative z-10 flex flex-col h-full">
+                <h3 className="text-2xl md:text-3xl font-heading font-bold mb-3 text-foreground">
+                  AI-Based Website Building & Hosting
+                </h3>
+                <p className="text-muted-foreground mb-8 leading-relaxed">
+                  Transform your online presence with responsive, SEO-optimized, AI-powered websites hosted on enterprise-grade servers
+                </p>
+
+                <div className="space-y-3 mb-8">
+                  {features.map((feature, index) => (
+                    <div key={index} className="flex items-start gap-3">
                       <CheckCircle2 className="w-5 h-5 text-primary flex-shrink-0 mt-0.5" />
-                      <span className="text-sm text-foreground">{feature}</span>
+                      <span className="text-foreground">{feature}</span>
                     </div>
                   ))}
                 </div>
-                <Button asChild className="w-full hover-glow bg-gradient-primary text-black font-semibold">
-                  <Link to="/services/ai-website-building">Learn More</Link>
-                </Button>
-              </CardContent>
-            </Card>
 
-            {/* Featured Service 2 */}
-            <Card className="card-3d card-lift border-2 border-accent/30">
-              <CardHeader>
-                <CardTitle className="text-2xl text-foreground">AI-Based Mobile Application Development</CardTitle>
-                <CardDescription className="text-base text-muted-foreground">
-                  Launch AI-powered mobile apps with smart recommendations, real-time analytics, and cross-platform
-                  performance
-                </CardDescription>
-              </CardHeader>
-              <CardContent>
-                <div className="space-y-3 mb-6">
+                {/* Push to bottom */}
+                <div className="mt-auto">
+                  <Button
+                    asChild
+                    className="w-full hover-glow bg-gradient-primary text-black font-semibold hover:text-black"
+                  >
+                    <Link to="/services/ai-website-building">Learn More</Link>
+                  </Button>
+                </div>
+              </div>
+            </div>
+
+            {/* Card 2 */}
+            <div className="group relative rounded-3xl p-8 md:p-10 border-2 border-accent/30 bg-card/50 backdrop-blur hover:border-accent/60 transition-all duration-300 overflow-hidden">
+              <div className="absolute inset-0 bg-gradient-to-br from-accent/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+
+              <div className="relative z-10 flex flex-col h-full">
+                <h3 className="text-2xl md:text-3xl font-heading font-bold mb-3 text-foreground">
+                  AI-Based Mobile Application Development
+                </h3>
+                <p className="text-muted-foreground mb-8 leading-relaxed">
+                  Launch AI-powered mobile apps with smart recommendations, real-time analytics, and cross-platform performance
+                </p>
+
+                <div className="space-y-3 mb-8">
                   {[
                     "iOS + Android development",
                     "AI-driven UX optimization",
@@ -293,175 +307,193 @@ const Home = () => {
                     "Performance monitoring",
                     "Seamless integration",
                   ].map((feature, index) => (
-                    <div key={index} className="flex items-start space-x-2">
+                    <div key={index} className="flex items-start gap-3">
                       <CheckCircle2 className="w-5 h-5 text-accent flex-shrink-0 mt-0.5" />
-                      <span className="text-sm text-foreground">{feature}</span>
+                      <span className="text-foreground">{feature}</span>
                     </div>
                   ))}
                 </div>
-                <Button
-                  asChild
-                  variant="outline"
-                  className="w-full border-accent/40 hover:bg-accent/10 bg-transparent text-primary hover:text-primary"
-                >
-                  <Link to="/services/mobile-app-development">Learn More</Link>
-                </Button>
-              </CardContent>
-            </Card>
+
+                {/* Push to bottom */}
+                <div className="mt-auto">
+                  <Button
+                    asChild
+                    variant="outline"
+                    className="w-full border-accent/40 hover:bg-accent/10 bg-transparent text-primary hover:text-accent hover:border-accent/60"
+                  >
+                    <Link to="/services/mobile-app-development">Learn More</Link>
+                  </Button>
+                </div>
+              </div>
+            </div>
           </div>
+
         </div>
       </section>
 
-      {/* Our Process */}
-      <section className="py-20 bg-gradient-to-b from-primary/3 via-transparent to-accent/3 relative">
-        <div className="absolute right-0 top-1/2 w-96 h-96 bg-gradient-accent opacity-4 rounded-full blur-3xl -translate-y-1/2 pointer-events-none animated-gradient" />
-
-        <div className="container mx-auto px-4 relative z-10">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-5xl font-heading font-bold mb-4 text-foreground">Our Process</h2>
+      <section className="py-24 md:py-32 relative bg-gradient-to-b from-background to-primary/2">
+        <div className="container mx-auto px-4">
+          <div className="text-center mb-20">
+            <h2 className="text-4xl md:text-6xl font-heading font-bold mb-6 text-foreground">Our Process</h2>
             <p className="text-muted-foreground text-lg">A proven methodology for delivering exceptional results</p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-6xl mx-auto">
-            {processSteps.map((step, index) => {
-              const Icon = step.icon
-              return (
-                <div key={index} className="text-center card-3d p-6 rounded-lg">
-                  <div className="w-16 h-16 rounded-full bg-gradient-primary flex items-center justify-center mx-auto mb-4 glow-pulse">
-                    <Icon className="w-8 h-8 text-black" />
+          <div className="max-w-6xl mx-auto">
+            <div className="grid grid-cols-1 md:grid-cols-4 gap-6 relative">
+              <div className="hidden md:block absolute top-16 left-0 right-0 h-0.5 bg-gradient-to-r from-primary/30 via-accent/30 to-primary/30" />
+
+              {processSteps.map((step, index) => {
+                const Icon = step.icon
+                return (
+                  <div key={index} className="relative">
+                    <div className="rounded-2xl p-8 border border-primary/20 bg-card/40 backdrop-blur text-center hover:border-primary/60 hover:bg-card/60 transition-all duration-300">
+                      <div className="w-16 h-16 rounded-full bg-gradient-primary flex items-center justify-center mx-auto mb-6 shadow-lg relative z-10 -mt-12 border-4 border-background">
+                        <Icon className="w-8 h-8 text-black" />
+                      </div>
+                      <h3 className="text-xl font-heading font-semibold mb-3 text-foreground">{step.title}</h3>
+                      <p className="text-muted-foreground leading-relaxed">{step.description}</p>
+                    </div>
                   </div>
-                  <h3 className="text-xl font-heading font-semibold mb-2 text-foreground">{step.title}</h3>
-                  <p className="text-muted-foreground text-sm">{step.description}</p>
-                </div>
-              )
-            })}
+                )
+              })}
+            </div>
           </div>
         </div>
       </section>
 
-      {/* What Our Clients Say */}
-      <section className="py-20">
+      {/* Testimonials */}
+      <section className="py-24 md:py-32 relative bg-gradient-to-b from-primary/3 via-transparent to-accent/3 section-accent-highlight">
         <div className="container mx-auto px-4">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-5xl font-heading font-bold mb-4 text-foreground">What Our Clients Say</h2>
+          <div className="text-center mb-20">
+            <h2 className="text-4xl md:text-6xl font-heading font-bold mb-6 text-foreground">What Our Clients Say</h2>
             <p className="text-muted-foreground text-lg">
               Trusted by creators, entrepreneurs, and businesses worldwide
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-10 max-w-7xl mx-auto">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-6xl mx-auto">
             {testimonials.map((testimonial, index) => (
-              <Card key={index} className="card-lift border-primary/20 bg-card/50 backdrop-blur">
-                <CardContent className="pt-6">
-                  <div className="flex items-center mb-4">
+              <div
+                key={index}
+                className="group relative rounded-2xl p-8 border-2 border-accent/60 bg-gradient-to-br from-card/50 to-card/30 backdrop-blur hover:border-accent hover:bg-gradient-to-br hover:from-card/70 hover:to-card/50 hover:shadow-lg hover:shadow-accent/40 transition-all duration-300 overflow-hidden"
+              >
+                <div className="absolute inset-0 bg-gradient-to-br from-accent/15 via-primary/5 to-primary/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                <div className="relative z-10">
+                  <div className="flex items-center mb-6">
                     <img
                       src={testimonial.image || "/placeholder.svg"}
                       alt={testimonial.name}
-                      className="w-14 h-14 rounded-full object-cover mr-4 border border-primary/40"
+                      className="w-14 h-14 rounded-full object-cover mr-4 border-2 border-accent/70 group-hover:border-accent transition-colors duration-300"
                     />
-                    <div className="text-left">
-                      <h4 className="font-semibold text-foreground">{testimonial.name}</h4>
-                      <p className="text-primary font-medium text-sm">{testimonial.title}</p>
+                    <div>
+                      <h4 className="font-semibold text-foreground group-hover:text-accent transition-colors duration-300">
+                        {testimonial.name}
+                      </h4>
+                      <p className="text-accent font-medium text-sm group-hover:text-primary transition-colors duration-300">
+                        {testimonial.title}
+                      </p>
                       <p className="text-muted-foreground text-xs">{testimonial.location}</p>
                     </div>
                   </div>
-                  <p className="text-foreground mb-4 text-sm leading-relaxed">"{testimonial.text}"</p>
+                  <p className="text-foreground mb-4 leading-relaxed">"{testimonial.text}"</p>
                   <div className="flex gap-1">
                     {Array.from({ length: testimonial.rating }).map((_, i) => (
-                      <Star key={i} className="w-4 h-4 fill-primary text-primary" />
+                      <Star
+                        key={i}
+                        className="w-4 h-4 fill-accent text-accent group-hover:fill-primary group-hover:text-primary transition-colors duration-300"
+                      />
                     ))}
                   </div>
-                </CardContent>
-              </Card>
+                </div>
+              </div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* Why Choose PropelusAI */}
-      <section className="py-20 bg-gradient-to-b from-primary/3 via-transparent to-accent/3">
+      {/* Why Choose Us */}
+      <section className="py-24 md:py-32 relative bg-gradient-to-b from-background to-primary/3">
         <div className="container mx-auto px-4">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 max-w-7xl mx-auto items-center">
-            {/* Left side */}
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 md:gap-16 max-w-7xl mx-auto items-center">
+            {/* Left content */}
             <div>
-              <h2 className="text-3xl md:text-5xl font-heading font-bold mb-6 text-foreground">
+              <h2 className="text-4xl md:text-6xl font-heading font-bold mb-8 text-foreground leading-tight">
                 Why Choose PropelusAI?
               </h2>
-              <p className="text-muted-foreground text-lg mb-8">
+              <p className="text-muted-foreground text-lg mb-10 leading-relaxed">
                 We understand the unique challenges faced by creators, coaches, solopreneurs, and growing companies. Our
                 mission is to provide trustworthy, results-driven solutions that help you scale with confidence.
               </p>
 
-              <div className="space-y-6 mb-8">
+              <div className="space-y-6 mb-10">
                 {whyChooseFeatures.map((feature, index) => {
                   const Icon = feature.icon
                   return (
-                    <div key={index} className="flex items-start gap-4">
-                      <div className="w-10 h-10 rounded-lg bg-gradient-primary flex items-center justify-center flex-shrink-0 mt-1">
-                        <Icon className="w-5 h-5 text-black" />
+                    <div key={index} className="flex items-start gap-4 group">
+                      <div className="w-12 h-12 rounded-xl bg-gradient-primary flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform duration-300 shadow-lg">
+                        <Icon className="w-6 h-6 text-black" />
                       </div>
                       <div>
-                        <h3 className="font-semibold text-lg mb-2 text-foreground">{feature.title}</h3>
-                        <p className="text-muted-foreground">{feature.description}</p>
+                        <h3 className="font-semibold text-lg mb-2 text-foreground group-hover:text-primary transition-colors">
+                          {feature.title}
+                        </h3>
+                        <p className="text-muted-foreground leading-relaxed">{feature.description}</p>
                       </div>
                     </div>
                   )
                 })}
               </div>
 
-              <Button asChild size="lg" className="hover-glow bg-gradient-primary text-black font-semibold">
+              <Button
+                asChild
+                size="lg"
+                className="hover-glow bg-gradient-primary text-black font-semibold hover:text-black"
+              >
                 <Link to="/about">Learn More About Us</Link>
               </Button>
             </div>
 
-            {/* Right side */}
-            <div className="relative">
+            {/* Right image */}
+            <div className="relative group">
+              <div className="absolute inset-0 bg-gradient-to-br from-primary/20 to-accent/10 rounded-3xl blur-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
               <img
                 src="https://images.unsplash.com/photo-1552664730-d307ca884978?w=600&h=400&fit=crop"
                 alt="PropelusAI Team"
-                className="rounded-2xl object-cover w-full h-auto card-lift border border-primary/30"
+                className="relative rounded-3xl object-cover w-full h-auto border-2 border-primary/30 group-hover:border-primary/60 transition-all duration-300"
               />
-              <div className="absolute bottom-8 left-8 bg-gradient-primary text-black px-6 py-4 rounded-xl font-bold text-center card-lift shadow-glow">
-                <div className="text-3xl">500+</div>
-                <div className="text-sm">Successful Projects</div>
+              <div className="absolute bottom-6 left-6 bg-gradient-primary text-black px-6 py-4 rounded-2xl font-bold text-center shadow-lg border border-primary/40 hover:shadow-lg hover:shadow-primary/40 transition-all">
+                <div className="text-2xl md:text-3xl">500+</div>
+                <div className="text-xs md:text-sm">Successful Projects</div>
               </div>
             </div>
           </div>
         </div>
       </section>
 
-      {/* CTA Section */}
-      <section className="py-20 relative overflow-hidden bg-dark-bg">
-        <div className="absolute inset-0 bg-gradient-to-r from-dark-bg via-dark-bg/95 to-dark-bg opacity-90" />
+      {/* Final CTA */}
+      <section className="py-20 md:py-28 relative overflow-hidden bg-gradient-to-b from-primary/2 via-background to-accent/3">
+        <div className="absolute inset-0 bg-gradient-to-br from-primary/8 via-transparent to-accent/8" />
+        <div className="absolute top-20 -right-32 w-96 h-96 bg-primary/10 rounded-full blur-3xl opacity-50 animate-pulse" />
+
         <div className="container mx-auto px-4 relative z-10">
-          <div className="max-w-4xl mx-auto text-center">
-            <div className="card-3d rounded-3xl p-12 md:p-16 shadow-3d border border-primary/20 bg-dark-bg/50 backdrop-blur-sm hover:border-primary/40 transition-all duration-300 relative overflow-hidden">
-              {/* Subtle animated background accent */}
-              <div className="absolute inset-0 bg-gradient-to-br from-primary/5 to-transparent opacity-0 hover:opacity-100 transition-opacity duration-300" />
-              <div className="relative z-10">
+          <div className="max-w-4xl mx-auto">
+            <div className="rounded-3xl p-12 md:p-16 border-2 border-primary/30 bg-card/40 backdrop-blur hover:border-primary/60 transition-all duration-300 relative overflow-hidden group">
+              <div className="absolute inset-0 bg-gradient-to-br from-primary/10 to-accent/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+              <div className="relative z-10 text-center">
                 <h2 className="text-3xl md:text-5xl font-heading font-bold mb-6 text-foreground">
-                  Transform Your Business Today
+                  Ready to Transform Your Business?
                 </h2>
-                <p className="text-lg md:text-xl mb-8 text-foreground/80">
-                  Join hundreds of businesses already accelerating their growth with PropelusAI
+                <p className="text-muted-foreground text-lg mb-10 max-w-2xl mx-auto leading-relaxed">
+                  Join hundreds of successful businesses that have already partnered with us for AI-driven growth and
+                  digital transformation.
                 </p>
-                <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                  <Button
-                    asChild
-                    size="lg"
-                    className="bg-primary text-dark hover:bg-primary/90 font-semibold transition-all duration-200"
-                  >
-                    <Link to="/contact">Get Free Quote</Link>
-                  </Button>
-                  <Button
-                    asChild
-                    size="lg"
-                    variant="outline"
-                    className="border-primary text-primary hover:bg-primary/10 font-semibold bg-transparent hover:text-primary transition-all duration-200"
-                  >
-                    <Link to="/contact">Call Us Now</Link>
-                  </Button>
-                </div>
+                <Button
+                  asChild
+                  size="lg"
+                  className="hover-glow bg-gradient-primary text-black font-semibold px-8 hover:text-black"
+                >
+                  <Link to="/contact">Start Your Journey Today</Link>
+                </Button>
               </div>
             </div>
           </div>

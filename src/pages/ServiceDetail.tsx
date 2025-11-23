@@ -24,7 +24,7 @@ const ServiceDetail = () => {
   }
 
   return (
-    <div className="min-h-screen pt-20 bg-gradient-to-b from-background via-card/30 to-background">
+    <div className="min-h-screen pt-20 bg-gradient-to-b from-background via-card/30 to-accent/5">
       {/* Back Button */}
       <div className="container mx-auto px-4 py-6">
         <Button asChild variant="ghost" className="group text-muted-foreground hover:text-primary">
@@ -35,10 +35,11 @@ const ServiceDetail = () => {
         </Button>
       </div>
 
+      {/* CHANGE: Hero section with improved gradient background */}
       <section className="py-12 md:py-20 bg-gradient-to-br from-primary/8 via-accent/4 to-transparent border-b border-primary/20 relative overflow-hidden">
         {/* Animated background elements */}
-        <div className="absolute top-10 left-5 w-64 h-64 bg-gradient-primary opacity-3 rounded-full blur-3xl animate-pulse pointer-events-none"></div>
-        <div className="absolute -bottom-20 -right-20 w-96 h-96 bg-gradient-accent opacity-2 rounded-full blur-3xl pointer-events-none"></div>
+        <div className="absolute top-20 left-10 w-64 h-64 bg-gradient-3d opacity-1 rounded-full blur-3xl animate-pulse pointer-events-none"></div>
+        <div className="absolute -bottom-32 -right-32 w-96 h-96 bg-gradient-3d opacity-3 rounded-full blur-2xl pointer-events-none"></div>
 
         <div className="container mx-auto px-4 relative z-10">
           <div className="max-w-4xl mx-auto">
@@ -51,27 +52,27 @@ const ServiceDetail = () => {
       </section>
 
       {/* Main Content Section */}
-      <section className="py-20">
+      <section className="py-20 bg-gradient-to-b from-primary/2 via-background to-accent/2">
         <div className="container mx-auto px-4">
           <div className="max-w-6xl mx-auto grid lg:grid-cols-3 gap-12">
             {/* Main Column */}
             <div className="lg:col-span-2 space-y-12">
-              {/* Description - Enhanced with gold borders and backgrounds */}
-              <div className="p-8 rounded-2xl border border-primary/20 bg-gradient-soft card-lift">
+              {/* Description - CHANGE: Enhanced with gradient cards */}
+              <div className="p-8 rounded-2xl border border-primary/20 bg-gradient-to-br from-card/60 to-card/40 hover:border-primary/40 transition-all card-lift">
                 <h2 className="text-2xl md:text-3xl font-heading font-bold mb-4 text-foreground">
                   Detailed Description
                 </h2>
                 <p className="text-muted-foreground leading-relaxed text-lg">{service.description}</p>
               </div>
 
-              {/* Key Features - Updated with gold color scheme */}
+              {/* Key Features - CHANGE: Updated styling with better hover effects */}
               <div>
                 <h2 className="text-2xl md:text-3xl font-heading font-bold mb-6 text-foreground">Key Features</h2>
                 <div className="grid md:grid-cols-2 gap-4">
                   {service.features.map((feature, i) => (
                     <div
                       key={i}
-                      className="flex items-start space-x-3 p-4 rounded-lg bg-card/50 border border-primary/15 hover:border-primary/40 hover:bg-primary/8 transition-all duration-300 text-dark-safe"
+                      className="flex items-start space-x-3 p-4 rounded-lg bg-card/50 border border-primary/15 hover:border-primary/40 hover:bg-primary/8 transition-all duration-300"
                     >
                       <CheckCircle2 className="w-6 h-6 text-primary flex-shrink-0 mt-0.5" />
                       <span className="text-foreground leading-relaxed">{feature}</span>
@@ -80,14 +81,14 @@ const ServiceDetail = () => {
                 </div>
               </div>
 
-              {/* Tools & Software - Gold-themed badges */}
+              {/* Tools & Software */}
               <div>
                 <h2 className="text-2xl md:text-3xl font-heading font-bold mb-6 text-foreground">Tools & Software</h2>
                 <div className="flex flex-wrap gap-3">
                   {service.tools.map((tool, i) => (
                     <span
                       key={i}
-                      className="px-4 py-2 rounded-full bg-gradient-primary text-black font-medium text-sm hover:shadow-lg transition-all duration-300 hover:scale-105 hover:shadow-glow"
+                      className="px-4 py-2 rounded-full bg-gradient-primary text-black font-medium text-sm hover:shadow-lg hover:shadow-primary/40 transition-all duration-300 hover:scale-105"
                     >
                       {tool}
                     </span>
@@ -95,14 +96,14 @@ const ServiceDetail = () => {
                 </div>
               </div>
 
-              {/* Pricing - Gold accent styling */}
+              {/* Pricing - CHANGE: Improved card layout with better gradient */}
               <div>
                 <h2 className="text-2xl md:text-3xl font-heading font-bold mb-6 text-foreground">Pricing (USD)</h2>
                 <div className="grid md:grid-cols-3 gap-4">
                   {service.pricing.map((plan, i) => (
                     <Card
                       key={i}
-                      className="border-primary/30 bg-card/60 backdrop-blur card-lift hover:border-primary/60 hover:text-foreground text-dark-safe"
+                      className="border-primary/30 bg-gradient-to-br from-card/60 to-card/40 card-lift hover:border-primary/60 hover:bg-gradient-to-br hover:from-card/70 hover:to-card/50 transition-all"
                     >
                       <CardContent className="py-6 text-center space-y-2">
                         <h3 className="text-lg font-bold text-foreground">{plan.title}</h3>
@@ -114,7 +115,7 @@ const ServiceDetail = () => {
                 </div>
               </div>
 
-              {/* Future Growth Options - Enhanced styling */}
+              {/* Future Growth Options */}
               <div>
                 <h2 className="text-2xl md:text-3xl font-heading font-bold mb-6 text-foreground">
                   Future Growth Options
@@ -123,7 +124,7 @@ const ServiceDetail = () => {
                   {service.growth.map((option, i) => (
                     <Card
                       key={i}
-                      className="border-accent/30 bg-card/50 hover:bg-accent/8 hover:border-accent/60 transition-all card-lift text-dark-safe"
+                      className="border-accent/30 bg-card/50 hover:bg-accent/8 hover:border-accent/60 transition-all card-lift"
                     >
                       <CardContent className="flex items-center space-x-3 py-4">
                         <TrendingUp className="w-5 h-5 text-accent flex-shrink-0" />
@@ -135,8 +136,9 @@ const ServiceDetail = () => {
               </div>
             </div>
 
+            {/* Sidebar */}
             <div className="space-y-6">
-              <Card className="border-2 border-primary/40 bg-gradient-to-br from-card/80 to-card/60 backdrop-blur sticky top-24">
+              <Card className="border-2 border-primary/40 bg-gradient-to-br from-card/80 to-card/60 backdrop-blur top-24 hover:border-primary/60 transition-all">
                 <CardContent className="pt-6 space-y-6">
                   {/* Timeline */}
                   <div className="flex items-start space-x-3">
@@ -179,7 +181,7 @@ const ServiceDetail = () => {
                 </CardContent>
               </Card>
 
-              <div className="p-6 rounded-2xl bg-gradient-to-br from-primary/8 to-accent/4 border border-primary/20 sticky top-96">
+              <div className="p-6 rounded-2xl bg-gradient-to-br from-primary/8 to-accent/4 border border-primary/20  top-96 hover:border-primary/40 transition-all">
                 <h3 className="text-lg font-heading font-semibold text-foreground mb-2">Why This Service?</h3>
                 <p className="text-sm text-muted-foreground leading-relaxed">
                   Get enterprise-grade solutions tailored specifically for your business needs with dedicated support.
@@ -190,6 +192,7 @@ const ServiceDetail = () => {
         </div>
       </section>
 
+      {/* CTA Section - CHANGE: Improved gradient and spacing */}
       <section className="py-20 bg-gradient-to-b from-background to-card/20 border-t border-primary/20 relative overflow-hidden">
         {/* Background elements */}
         <div className="absolute top-0 left-0 w-96 h-96 bg-gradient-primary opacity-2 rounded-full blur-3xl -translate-x-1/2 -translate-y-1/2 pointer-events-none"></div>
@@ -207,7 +210,7 @@ const ServiceDetail = () => {
               <Button
                 asChild
                 size="lg"
-                className="bg-gradient-primary text-black hover:shadow-glow font-semibold hover:text-black"
+                className="bg-gradient-primary text-black hover:shadow-lg hover:shadow-primary/50 font-semibold hover:text-black"
               >
                 <Link to="/contact">Contact Us Today</Link>
               </Button>

@@ -4,13 +4,14 @@
 
 @layer base {
   :root {
-    /* Unified dark-gold theme - using CSS variables for dynamic switching */
+    /* Refined color palette - maintained existing theme */
     --theme-primary: #f8cd86;
     --theme-accent: #fbbf24;
     --theme-secondary: #d4a574;
     --theme-dark: #1a1918;
+    --theme-light: #f0dcc4;
 
-    /* Semantic dark background colors */
+    /* Semantic color tokens */
     --background: 24 12% 10%;
     --foreground: 40 9% 92%;
 
@@ -41,7 +42,7 @@
 
     --radius: 0.75rem;
 
-    /* Dynamic gradients using theme variables instead of hardcoded colors */
+    /* Enhanced gradients */
     --gradient-primary: linear-gradient(135deg, var(--theme-primary), var(--theme-accent));
     --gradient-dark: linear-gradient(135deg, var(--theme-dark) 0%, #0a0a0a 100%);
     --gradient-overlay: linear-gradient(135deg, var(--theme-primary) 0%, var(--theme-accent) 100%);
@@ -49,13 +50,14 @@
     --gradient-3d: linear-gradient(135deg, var(--theme-primary), var(--theme-secondary), var(--theme-accent));
     --gradient-soft: linear-gradient(135deg, rgba(248, 205, 134, 0.1), rgba(251, 191, 36, 0.05));
 
-    /* Shadow colors using theme primary for dynamic glow */
+    /* Enhanced shadows */
     --shadow-glow: 0 0 30px var(--theme-primary) / 0.3;
     --shadow-card: 0 8px 32px rgba(0, 0, 0, 0.4);
     --shadow-lg: 0 20px 50px rgba(0, 0, 0, 0.6);
     --shadow-3d: 0 30px 80px var(--theme-primary) / 0.12;
     --shadow-hover: 0 15px 45px rgba(0, 0, 0, 0.5);
 
+    /* Transition utilities */
     --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     --transition-fast: all 0.15s cubic-bezier(0.4, 0, 0.2, 1);
   }
@@ -90,10 +92,9 @@
 }
 
 @layer components {
-  /* Glass morphism dark variant */
+  /* Refined glass morphism */
   .glass-card {
-    @apply backdrop-blur-xl border border-border/40;
-    /* Use theme variables for glass card gradient */
+    @apply backdrop-blur-xl border border-border/40 rounded-2xl;
     background: linear-gradient(135deg, var(--theme-primary) / 6%, var(--theme-accent) / 2%);
     box-shadow: var(--shadow-card);
   }
@@ -103,7 +104,7 @@
     box-shadow: var(--shadow-hover);
   }
 
-  /* Gradient text using theme palette */
+  /* Enhanced gradient text */
   .gradient-text {
     @apply bg-clip-text text-transparent;
     background-image: var(--gradient-primary);
@@ -120,10 +121,9 @@
     background-image: var(--gradient-3d);
   }
 
-  /* Card with 3D lift effect */
+  /* Enhanced card lift */
   .card-lift {
     transition: var(--transition-smooth);
-    /* Use theme variables for card lift gradient */
     background: linear-gradient(135deg, var(--theme-primary) / 4%, var(--theme-accent) / 2%);
     border: 1px solid var(--theme-primary) / 10%;
   }
@@ -132,14 +132,12 @@
     transform: translateY(-8px) perspective(1200px) rotateX(3deg);
     box-shadow: var(--shadow-3d);
     border-color: var(--theme-primary);
-    /* Use theme variables for hover gradient */
     background: linear-gradient(135deg, var(--theme-primary) / 8%, var(--theme-accent) / 4%);
   }
 
   /* Enhanced 3D card */
   .card-3d {
     @apply backdrop-blur-xl rounded-2xl;
-    /* Use theme variables for 3D card gradient */
     background: linear-gradient(135deg, var(--theme-primary) / 5%, var(--theme-accent) / 1%);
     border: 1px solid var(--theme-primary) / 12%;
     transform-style: preserve-3d;
@@ -150,11 +148,10 @@
     transform: translateY(-12px) rotateX(6deg) rotateY(-3deg) perspective(1500px);
     box-shadow: var(--shadow-3d);
     border-color: var(--theme-accent);
-    /* Use theme variables for 3D card hover gradient */
     background: linear-gradient(135deg, var(--theme-primary) / 10%, var(--theme-accent) / 5%);
   }
 
-  /* Glow effect on hover */
+  /* Glow effect */
   .hover-glow {
     transition: var(--transition-smooth);
   }
@@ -165,17 +162,15 @@
 
   /* Gradient sections */
   .gradient-section {
-    /* Use theme dark variable for section gradient */
     background: linear-gradient(135deg, var(--theme-dark) 0%, #252220 50%, var(--theme-dark) 100%);
   }
 
   .gradient-section-accent {
-    /* Use theme variables for accent section */
     background: linear-gradient(135deg, var(--theme-primary) 0%, var(--theme-accent) 100%);
     color: var(--theme-dark);
   }
 
-  /* Animated gradient background */
+  /* Animated gradient */
   .animated-gradient {
     background-size: 200% 200%;
     animation: gradientShift 8s ease infinite;
@@ -193,7 +188,50 @@
     }
   }
 
-  /* Floating animation for 3D feel */
+  /* Subtle animated gradient for hero sections */
+  .hero-animated-gradient {
+    background-size: 300% 300%;
+    background-image: linear-gradient(
+      135deg,
+      rgba(248, 205, 134, 0.15) 0%,
+      rgba(251, 191, 36, 0.08) 50%,
+      rgba(212, 165, 116, 0.1) 100%
+    );
+    animation: subtleGradientShift 12s ease-in-out infinite;
+  }
+
+  /* Enhanced subtle gradient animation with smoother transitions */
+  @keyframes subtleGradientShift {
+    0% {
+      background-position: 0% 50%;
+      background-image: linear-gradient(135deg, rgba(26, 25, 24, 1), rgba(45, 42, 38, 0.4), rgba(26, 25, 24, 1));
+    }
+    50% {
+      background-position: 100% 50%;
+      background-image: linear-gradient(135deg, rgba(45, 42, 38, 0.5), rgba(55, 50, 44, 0.6), rgba(45, 42, 38, 0.5));
+    }
+    100% {
+      background-position: 0% 50%;
+      background-image: linear-gradient(135deg, rgba(26, 25, 24, 1), rgba(45, 42, 38, 0.4), rgba(26, 25, 24, 1));
+    }
+  }
+
+  /* Light accent highlight for sections */
+  .section-accent-highlight {
+    position: relative;
+  }
+
+  .section-accent-highlight::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, var(--theme-accent), transparent);
+  }
+
+  /* Floating animation */
   .floating {
     animation: floating 4s ease-in-out infinite;
   }
@@ -211,7 +249,7 @@
     }
   }
 
-  /* Subtle glow pulse */
+  /* Refined glow pulse animation */
   .glow-pulse {
     animation: glowPulseAnim 3s ease-in-out infinite;
   }
@@ -219,7 +257,6 @@
   @keyframes glowPulseAnim {
     0%,
     100% {
-      /* Use theme primary for glow animation */
       box-shadow: 0 0 20px var(--theme-primary) / 0.25;
     }
     50% {
@@ -244,7 +281,7 @@
     }
   }
 
-  /* Subtle slide-in animation */
+  /* Slide-in animation */
   .slide-in {
     animation: slideInAnim 0.6s ease-out forwards;
   }
@@ -260,7 +297,7 @@
     }
   }
 
-  /* Fade in animation */
+  /* Fade-in animation */
   .fade-in {
     animation: fadeInAnim 0.8s ease-out forwards;
   }
@@ -274,7 +311,7 @@
     }
   }
 
-  /* Button with theme gradient and proper hover states */
+  /* Primary button styling */
   .btn-primary {
     @apply text-black px-6 py-3 rounded-lg font-semibold transition-all duration-300;
     background: var(--gradient-primary);
@@ -291,28 +328,21 @@
     transform: translateY(0);
   }
 
-  /* Floating CTA button */
-  .floating-cta {
-    @apply fixed bottom-8 right-8 z-50;
-  }
-
-  /* Icon button with theme colors */
+  /* Icon button */
   .icon-btn {
     @apply w-10 h-10 rounded-full flex items-center justify-center transition-all duration-300;
-    /* Use theme primary for icon button background */
     background: var(--theme-primary) / 8%;
     border: 1px solid var(--theme-primary) / 20%;
     color: hsl(var(--foreground));
   }
 
   .icon-btn:hover {
-    /* Use theme primary for icon button hover state */
     background: var(--theme-primary) / 15%;
     border-color: var(--theme-primary);
     color: var(--theme-primary);
   }
 
-  /* Link hover effect */
+  /* Enhanced link hover effect with underline/bottom border */
   .link-hover {
     @apply relative transition-colors duration-300;
     color: var(--theme-primary);
@@ -321,14 +351,14 @@
   .link-hover::after {
     content: "";
     @apply absolute -bottom-1 left-0 w-0 h-0.5 transition-all duration-300;
-    background: var(--gradient-primary);
+    background: linear-gradient(90deg, var(--theme-primary), var(--theme-accent));
   }
 
   .link-hover:hover::after {
     @apply w-full;
   }
 
-  /* Backdrop blur overlay */
+  /* Blur overlay */
   .blur-overlay {
     backdrop-filter: blur(10px);
     background: rgba(26, 25, 24, 0.7);
@@ -336,7 +366,7 @@
 }
 
 @layer utilities {
-  /* Gradient background utilities */
+  /* Gradient utilities */
   .bg-gradient-dark {
     background: var(--gradient-dark);
   }
@@ -375,12 +405,17 @@
     transform-style: preserve-3d;
   }
 
-  /* Text color utilities for dark backgrounds */
+  /* Text utilities */
   .text-dark-safe {
     @apply text-foreground transition-colors duration-300;
   }
 
   .text-dark-safe:hover {
     @apply text-primary;
+  }
+
+  /* Text sizing utilities for better hierarchy */
+  .text-balance {
+    text-wrap: balance;
   }
 }

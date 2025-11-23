@@ -61,13 +61,13 @@ const Contact = () => {
   ]
 
   return (
-    <div className="min-h-screen pt-20 bg-gradient-to-b from-background via-card/20 to-background">
+    <div className="min-h-screen pt-20 bg-gradient-to-b from-background via-card/20 to-accent/5">
       <section className="relative py-20 md:py-32 overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-br from-primary/8 via-accent/3 to-transparent" />
 
         {/* Animated background elements */}
-        <div className="absolute top-20 left-10 w-64 h-64 bg-gradient-primary opacity-4 rounded-full blur-3xl animate-pulse pointer-events-none"></div>
-        <div className="absolute -bottom-32 -right-32 w-96 h-96 bg-gradient-accent opacity-3 rounded-full blur-3xl pointer-events-none"></div>
+        <div className="absolute top-20 left-10 w-64 h-64 bg-gradient-3d opacity-1 rounded-full blur-3xl animate-pulse pointer-events-none"></div>
+        <div className="absolute -bottom-32 -right-32 w-96 h-96 bg-gradient-3d opacity-3 rounded-full blur-2xl pointer-events-none"></div>
 
         <div className="container mx-auto px-4 relative z-10">
           <div className="max-w-4xl mx-auto text-center">
@@ -81,13 +81,17 @@ const Contact = () => {
         </div>
       </section>
 
-      <section className="py-20 bg-gradient-to-br from-primary/2 via-card/40 to-accent/2">
+      {/* CHANGE: Contact benefits section with better spacing */}
+      <section className="py-20 bg-gradient-to-br from-primary/3 via-card/40 to-accent/3">
         <div className="container mx-auto px-4">
-          <div className="max-w-7xl mx-auto grid md:grid-cols-3 gap-8">
+          <div className="max-w-6xl mx-auto grid md:grid-cols-3 gap-8">
             {contactBenefits.map((benefit, index) => {
               const Icon = benefit.icon
               return (
-                <div key={index} className="text-center p-8 rounded-2xl bg-card border border-primary/20 card-lift">
+                <div
+                  key={index}
+                  className="text-center p-8 rounded-2xl bg-card/60 border border-primary/20 card-lift hover:border-primary/40"
+                >
                   <div className="w-16 h-16 rounded-lg bg-gradient-primary flex items-center justify-center mx-auto mb-4">
                     <Icon className="w-8 h-8 text-black" />
                   </div>
@@ -101,12 +105,12 @@ const Contact = () => {
       </section>
 
       {/* Contact Section */}
-      <section className="py-20">
+      <section className="py-20 bg-gradient-to-b from-primary/2 via-background to-accent/2">
         <div className="container mx-auto px-4">
           <div className="max-w-6xl mx-auto grid lg:grid-cols-2 gap-12">
             {/* Contact Form */}
             <div>
-              <Card className="border-2 border-primary/40 bg-gradient-to-br from-card/80 to-card/60">
+              <Card className="border-2 border-primary/40 bg-gradient-to-br from-card/80 to-card/60 hover:border-primary/60 transition-all">
                 <CardHeader>
                   <CardTitle className="text-2xl text-foreground">Send Us a Message</CardTitle>
                   <CardDescription className="text-muted-foreground">
@@ -124,7 +128,7 @@ const Contact = () => {
                         name="name"
                         placeholder="John Doe"
                         required
-                        className="h-11 bg-card/50 border-primary/20 text-foreground"
+                        className="h-11 bg-card/50 border-primary/20 text-foreground focus:border-primary/40"
                       />
                     </div>
 
@@ -138,7 +142,7 @@ const Contact = () => {
                         type="email"
                         placeholder="john@example.com"
                         required
-                        className="h-11 bg-card/50 border-primary/20 text-foreground"
+                        className="h-11 bg-card/50 border-primary/20 text-foreground focus:border-primary/40"
                       />
                     </div>
 
@@ -151,7 +155,7 @@ const Contact = () => {
                         name="phone"
                         type="tel"
                         placeholder="+91 XXXX-XXX-XXX"
-                        className="h-11 bg-card/50 border-primary/20 text-foreground"
+                        className="h-11 bg-card/50 border-primary/20 text-foreground focus:border-primary/40"
                       />
                     </div>
 
@@ -183,13 +187,13 @@ const Contact = () => {
                         placeholder="Tell us about your project..."
                         required
                         rows={5}
-                        className="bg-card/50 border-primary/20 text-foreground"
+                        className="bg-card/50 border-primary/20 text-foreground focus:border-primary/40"
                       />
                     </div>
 
                     <Button
                       type="submit"
-                      className="w-full h-11 hover-glow bg-gradient-primary text-black font-semibold"
+                      className="w-full h-11 hover-glow bg-gradient-primary text-black font-semibold hover:text-black"
                       disabled={isSubmitting}
                     >
                       {isSubmitting ? (
@@ -216,7 +220,7 @@ const Contact = () => {
               </div>
 
               <div className="space-y-6">
-                <Card className="card-lift border-primary/20 bg-card/50">
+                <Card className="card-lift border-primary/20 bg-card/60 hover:border-primary/40 transition-all">
                   <CardContent className="flex items-start space-x-4 pt-6">
                     <div className="w-12 h-12 rounded-lg bg-gradient-primary flex items-center justify-center flex-shrink-0">
                       <Mail className="w-6 h-6 text-black" />
@@ -233,7 +237,7 @@ const Contact = () => {
                   </CardContent>
                 </Card>
 
-                <Card className="card-lift border-primary/20 bg-card/50">
+                <Card className="card-lift border-primary/20 bg-card/60 hover:border-primary/40 transition-all">
                   <CardContent className="flex items-start space-x-4 pt-6">
                     <div className="w-12 h-12 rounded-lg bg-gradient-primary flex items-center justify-center flex-shrink-0">
                       <Phone className="w-6 h-6 text-black" />
@@ -246,7 +250,7 @@ const Contact = () => {
                   </CardContent>
                 </Card>
 
-                <Card className="card-lift border-primary/20 bg-card/50">
+                <Card className="card-lift border-primary/20 bg-card/60 hover:border-primary/40 transition-all">
                   <CardContent className="flex items-start space-x-4 pt-6">
                     <div className="w-12 h-12 rounded-lg bg-gradient-primary flex items-center justify-center flex-shrink-0">
                       <MapPin className="w-6 h-6 text-black" />
@@ -263,7 +267,7 @@ const Contact = () => {
                 </Card>
               </div>
 
-              <div className="bg-gradient-to-br from-primary/8 to-accent/4 rounded-2xl p-8 border border-primary/20">
+              <div className="bg-gradient-to-br from-primary/8 to-accent/4 rounded-2xl p-8 border border-primary/20 hover:border-primary/40 transition-all">
                 <h3 className="text-xl font-heading font-semibold mb-2 text-foreground">Response Time</h3>
                 <p className="text-muted-foreground">
                   We typically respond to all inquiries within 24 hours during business days. For urgent matters, please
@@ -275,7 +279,8 @@ const Contact = () => {
         </div>
       </section>
 
-      <section className="py-20 bg-gradient-to-br from-primary/2 via-card/40 to-accent/2">
+      {/* FAQ Section */}
+      <section className="py-20 bg-gradient-to-br from-primary/2 via-card/40 to-accent/2 section-accent-highlight">
         <div className="container mx-auto px-4">
           <div className="max-w-6xl mx-auto">
             <div className="text-center mb-16">
@@ -302,7 +307,10 @@ const Contact = () => {
                   a: "We offer free initial consultations. Use the contact form above or call us to book your slot.",
                 },
               ].map((item, index) => (
-                <Card key={index} className="card-lift border-primary/20 bg-card/50">
+                <Card
+                  key={index}
+                  className="card-lift border-primary/20 bg-card/60 hover:border-accent/40 transition-all"
+                >
                   <CardContent className="pt-6">
                     <h3 className="text-lg font-heading font-semibold mb-3 text-primary">{item.q}</h3>
                     <p className="text-muted-foreground leading-relaxed">{item.a}</p>

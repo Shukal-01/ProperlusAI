@@ -210,13 +210,13 @@ const Services = () => {
   ]
 
   return (
-    <div className="min-h-screen pt-20">
+    <div className="min-h-screen pt-20 bg-gradient-to-b from-background via-card/20 to-accent/5">
       <section className="relative py-20 md:py-32 overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-br from-primary/8 via-accent/3 to-transparent" />
 
         {/* Animated background elements */}
-        <div className="absolute top-20 left-10 w-64 h-64 bg-gradient-primary opacity-4 rounded-full blur-3xl animate-pulse pointer-events-none"></div>
-        <div className="absolute -bottom-32 -right-32 w-96 h-96 bg-gradient-accent opacity-3 rounded-full blur-3xl pointer-events-none"></div>
+        <div className="absolute top-20 left-10 w-64 h-64 bg-gradient-3d opacity-1 rounded-full blur-3xl animate-pulse pointer-events-none"></div>
+        <div className="absolute -bottom-32 -right-32 w-96 h-96 bg-gradient-3d opacity-3 rounded-full blur-2xl pointer-events-none"></div>
 
         <div className="container mx-auto px-4 relative z-10">
           <div className="max-w-4xl mx-auto text-center">
@@ -230,18 +230,18 @@ const Services = () => {
         </div>
       </section>
 
-      {/* Services Categories */}
-      <section className="py-20">
+      {/* Services Categories - CHANGE: Improved tabs and card styling */}
+      <section className="py-20 bg-gradient-to-b from-primary/2 via-background to-accent/2">
         <div className="container mx-auto px-4">
           <Tabs defaultValue="web-mobile" className="max-w-7xl mx-auto">
-            <TabsList className="grid grid-cols-2 lg:grid-cols-4 mb-12 h-auto bg-card/50 border border-primary/20">
+            <TabsList className="grid grid-cols-2 lg:grid-cols-4 mb-12 h-auto bg-card/50 border border-primary/20 rounded-xl p-1">
               {serviceCategories.map((category) => {
                 const Icon = category.icon
                 return (
                   <TabsTrigger
                     key={category.id}
                     value={category.id}
-                    className="flex flex-col items-center gap-2 py-4 data-[state=active]:bg-gradient-primary data-[state=active]:text-black"
+                    className="flex flex-col items-center gap-2 py-4 data-[state=active]:bg-gradient-primary data-[state=active]:text-black rounded-lg transition-all"
                   >
                     <Icon className="w-5 h-5" />
                     <span className="text-sm font-medium">{category.name}</span>
@@ -256,7 +256,10 @@ const Services = () => {
                   {category.services.map((service, index) => {
                     const Icon = service.icon
                     return (
-                      <Card key={index} className="card-lift hover-glow border-primary/30 bg-card/50 backdrop-blur">
+                      <Card
+                        key={index}
+                        className="card-lift hover-glow border-primary/30 bg-card/60 backdrop-blur hover:border-primary/50 transition-all"
+                      >
                         <CardHeader>
                           <div className="w-12 h-12 rounded-lg bg-gradient-primary flex items-center justify-center mb-4">
                             <Icon className="w-6 h-6 text-black" />
@@ -270,7 +273,8 @@ const Services = () => {
                           <Button
                             asChild
                             variant="outline"
-                            className="w-full group bg-transparent border-primary/30 text-primary hover:bg-primary/10"
+                            // className="w-full group bg-transparent border-primary/30 text-primary hover:bg-primary/10 hover:border-primary/50 transition-all"
+                            className="w-full group bg-transparent border-primary/30 text-primary transition-all hover:border-primary/30 hover:bg-transparent hover:text-primary"
                           >
                             <Link to={service.link}>
                               Learn More
@@ -288,7 +292,8 @@ const Services = () => {
         </div>
       </section>
 
-      <section className="py-20 bg-gradient-to-br from-primary/4 via-card/50 to-accent/4">
+      {/* Features Section - CHANGE: Improved gradient and card design */}
+      <section className="py-20 bg-gradient-to-br from-primary/3 via-card/40 to-accent/3">
         <div className="container mx-auto px-4">
           <div className="max-w-6xl mx-auto">
             <div className="text-center mb-16">
@@ -308,7 +313,7 @@ const Services = () => {
                 return (
                   <Card
                     key={index}
-                    className="text-center card-lift border-primary/20 bg-card/50 backdrop-blur hover:border-primary/50"
+                    className="text-center card-lift border-primary/20 bg-card/60 backdrop-blur hover:border-primary/50 transition-all"
                   >
                     <CardContent className="pt-8">
                       <div className="w-16 h-16 rounded-full bg-gradient-primary flex items-center justify-center mx-auto mb-6">
@@ -323,14 +328,18 @@ const Services = () => {
             </div>
 
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button asChild size="lg" className="hover-glow bg-gradient-primary text-black font-semibold">
+              <Button
+                asChild
+                size="lg"
+                className="hover-glow bg-gradient-primary text-black font-semibold hover:text-black"
+              >
                 <Link to="/contact">Schedule Free Consultation</Link>
               </Button>
               <Button
                 asChild
                 size="lg"
                 variant="outline"
-                className="border-primary/40 text-primary hover:bg-primary/10 bg-transparent"
+                className="border-primary/40 text-primary hover:bg-primary/10 bg-transparent hover:text-primary"
               >
                 <Link to="/contact">Request Custom Package Quote</Link>
               </Button>
@@ -339,7 +348,8 @@ const Services = () => {
         </div>
       </section>
 
-      <section className="py-20">
+      {/* Transform Section */}
+      <section className="py-20 bg-gradient-to-b from-background to-primary/3">
         <div className="container mx-auto px-4">
           <div className="max-w-7xl mx-auto">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
@@ -370,7 +380,7 @@ const Services = () => {
                   <Button
                     asChild
                     size="lg"
-                    className="bg-gradient-primary text-black hover:bg-gradient-accent font-semibold"
+                    className="bg-gradient-primary text-black hover:shadow-lg hover:shadow-primary/50 font-semibold hover:text-black"
                   >
                     <Link to="/contact">Get Free Quote</Link>
                   </Button>
@@ -378,7 +388,7 @@ const Services = () => {
                     asChild
                     size="lg"
                     variant="outline"
-                    className="border-primary/40 text-primary hover:bg-primary/10 bg-transparent"
+                    className="border-primary/40 text-primary hover:bg-primary/10 bg-transparent hover:text-primary"
                   >
                     <Link to="/contact">Call Us Now</Link>
                   </Button>
@@ -390,7 +400,7 @@ const Services = () => {
                   alt="Team collaborating"
                   className="rounded-3xl w-full h-full object-cover shadow-2xl border border-primary/30 card-lift"
                 />
-                <div className="absolute bottom-6 right-6 bg-gradient-primary text-black rounded-2xl p-6 shadow-lg font-bold">
+                <div className="absolute bottom-6 right-6 bg-gradient-primary text-black rounded-2xl p-6 shadow-lg font-bold hover:shadow-lg hover:shadow-primary/40 transition-all">
                   <div className="text-4xl mb-1">98%</div>
                   <div className="text-sm font-medium">Success Rate</div>
                 </div>
@@ -400,6 +410,7 @@ const Services = () => {
         </div>
       </section>
 
+      {/* Process Section - CHANGE: Improved gradient background and spacing */}
       <section className="py-20 bg-gradient-to-br from-primary/3 via-card/40 to-accent/3">
         <div className="container mx-auto px-4">
           <div className="max-w-6xl mx-auto">
@@ -422,11 +433,11 @@ const Services = () => {
 
                     <div className="text-center">
                       <div className="inline-flex items-center justify-center mb-6 relative">
-                        <div className="absolute inset-0 bg-gradient-primary rounded-full" />
+                        <div className="absolute inset-0 bg-gradient-primary rounded-full opacity-20 blur-xl" />
                         <div className="relative w-24 h-24 rounded-full bg-gradient-primary flex items-center justify-center">
                           <Icon className="w-10 h-10 text-black" />
                         </div>
-                        <div className="absolute -top-2 -right-2 bg-primary text-black rounded-full w-8 h-8 flex items-center justify-center text-sm font-bold">
+                        <div className="absolute -top-2 -right-2 bg-primary text-white rounded-full w-8 h-8 flex items-center justify-center text-sm font-bold">
                           {step.number}
                         </div>
                       </div>
@@ -441,7 +452,8 @@ const Services = () => {
         </div>
       </section>
 
-      <section className="py-20">
+      {/* Final CTA */}
+      <section className="py-20 bg-gradient-to-b from-background to-primary/2">
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto text-center">
             <h2 className="text-3xl md:text-5xl font-heading font-bold mb-6 text-foreground">
@@ -451,14 +463,18 @@ const Services = () => {
               Get a free consultation to discover which services are right for you
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button asChild size="lg" className="hover-glow bg-gradient-primary text-black font-semibold">
+              <Button
+                asChild
+                size="lg"
+                className="hover-glow bg-gradient-primary text-black font-semibold hover:text-black"
+              >
                 <Link to="/contact">Schedule Consultation</Link>
               </Button>
               <Button
                 asChild
                 size="lg"
                 variant="outline"
-                className="border-primary/40 text-primary hover:bg-primary/10 bg-transparent"
+                className="border-primary/40 text-primary hover:bg-primary/10 bg-transparent hover:text-primary"
               >
                 <Link to="/contact">Get a Quote</Link>
               </Button>

@@ -57,14 +57,14 @@ const About = () => {
   ]
 
   return (
-    <div className="min-h-screen pt-20">
+    <div className="min-h-screen pt-20 bg-gradient-to-b from-background via-background to-accent/5">
       {/* Hero Section */}
       <section className="relative py-20 md:py-32 overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-br from-primary/8 via-accent/3 to-transparent" />
 
         {/* Animated background elements */}
-        <div className="absolute top-20 left-10 w-64 h-64 bg-gradient-primary opacity-4 rounded-full blur-3xl animate-pulse pointer-events-none"></div>
-        <div className="absolute -bottom-32 -right-32 w-96 h-96 bg-gradient-accent opacity-3 rounded-full blur-3xl pointer-events-none"></div>
+        <div className="absolute top-20 left-10 w-64 h-64 bg-gradient-3d opacity-1 rounded-full blur-3xl animate-pulse pointer-events-none"></div>
+        <div className="absolute -bottom-32 -right-32 w-96 h-96 bg-gradient-3d opacity-3 rounded-full blur-2xl pointer-events-none"></div>
 
         <div className="container mx-auto px-4 relative z-10">
           <div className="max-w-4xl mx-auto text-center">
@@ -80,7 +80,7 @@ const About = () => {
       </section>
 
       {/* Mission Section */}
-      <section className="py-20">
+      <section className="py-20 bg-gradient-to-b from-transparent via-primary/2 to-transparent">
         <div className="container mx-auto px-4">
           <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-12 items-center">
             <div className="space-y-6">
@@ -97,9 +97,9 @@ const About = () => {
               </p>
             </div>
             <div className="relative">
-              <div className="aspect-square rounded-3xl bg-gradient-primary p-1">
-                <div className="w-full h-full rounded-3xl bg-background flex items-center justify-center">
-                  <Target className="w-32 h-32 text-primary" />
+              <div className="aspect-square rounded-3xl bg-gradient-to-br from-primary/10 to-accent/5 p-8 border border-primary/20">
+                <div className="w-full h-full rounded-2xl bg-gradient-primary flex items-center justify-center">
+                  <Target className="w-32 h-32 text-black/20" />
                 </div>
               </div>
             </div>
@@ -108,7 +108,7 @@ const About = () => {
       </section>
 
       {/* What We Do */}
-      <section className="py-20 bg-gradient-to-br from-primary/2 via-card/40 to-accent/2">
+      <section className="py-20 bg-gradient-to-br from-primary/2 via-card/40 to-accent/2 section-accent-highlight">
         <div className="container mx-auto px-4">
           <div className="max-w-6xl mx-auto">
             <div className="text-center mb-16">
@@ -136,9 +136,12 @@ const About = () => {
                     "Streamline operations with intelligent automation, CRM integration, and workflow optimization.",
                 },
               ].map((item, index) => (
-                <Card key={index} className="card-lift border-primary/20 bg-card/50 backdrop-blur">
+                <Card
+                  key={index}
+                  className="card-lift border-primary/30 bg-gradient-to-br from-card/50 to-card/30 backdrop-blur hover:border-accent/60 hover:shadow-lg hover:shadow-primary/20 transition-all duration-300"
+                >
                   <CardContent className="pt-6">
-                    <h3 className="text-xl font-heading font-semibold mb-3 text-foreground">{item.title}</h3>
+                    <h3 className="text-xl font-heading font-semibold mb-3 text-accent">{item.title}</h3>
                     <p className="text-muted-foreground leading-relaxed">{item.description}</p>
                   </CardContent>
                 </Card>
@@ -149,7 +152,7 @@ const About = () => {
       </section>
 
       {/* Core Values */}
-      <section className="py-20">
+      <section className="py-20 bg-gradient-to-b from-accent/3 via-background to-primary/2">
         <div className="container mx-auto px-4">
           <div className="max-w-6xl mx-auto">
             <div className="text-center mb-16">
@@ -157,11 +160,14 @@ const About = () => {
               <p className="text-muted-foreground text-lg">Principles that guide everything we do</p>
             </div>
 
-            <div className="grid md:grid-cols-3 gap-8">
+            <div className="grid md:grid-cols-3 gap-8 mb-16">
               {coreValues.map((value, index) => {
                 const Icon = value.icon
                 return (
-                  <div key={index} className="p-8 rounded-2xl border border-primary/20 bg-card/50 card-lift">
+                  <div
+                    key={index}
+                    className="p-8 rounded-2xl border border-primary/20 bg-gradient-to-br from-card/60 via-card/40 to-card/30 card-lift hover:border-primary/40"
+                  >
                     <div className="w-14 h-14 rounded-lg bg-gradient-primary flex items-center justify-center mb-6">
                       <Icon className="w-7 h-7 text-black" />
                     </div>
@@ -190,7 +196,10 @@ const About = () => {
               {values.map((value, index) => {
                 const Icon = value.icon
                 return (
-                  <div key={index} className="p-6 rounded-2xl border border-primary/20 bg-card card-lift hover-glow">
+                  <div
+                    key={index}
+                    className="p-6 rounded-2xl border border-primary/20 bg-card/60 card-lift hover-glow transition-all duration-300"
+                  >
                     <div className="w-12 h-12 rounded-lg bg-gradient-primary flex items-center justify-center mb-4">
                       <Icon className="w-6 h-6 text-black" />
                     </div>
@@ -205,7 +214,7 @@ const About = () => {
       </section>
 
       {/* Impact Section */}
-      <section className="py-20">
+      <section className="py-20 bg-gradient-to-b from-background via-primary/3 to-background">
         <div className="container mx-auto px-4">
           <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-12 items-center">
             <div className="space-y-6">
@@ -234,7 +243,7 @@ const About = () => {
               </div>
             </div>
             <div className="relative">
-              <div className="aspect-square rounded-3xl bg-gradient-to-br from-primary/10 to-accent/10 p-8 border border-primary/20">
+              <div className="aspect-square rounded-3xl bg-gradient-to-br from-primary/15 to-accent/10 p-8 border border-primary/20 hover:border-primary/40 transition-all">
                 <div className="w-full h-full rounded-2xl bg-gradient-primary flex items-center justify-center">
                   <TrendingUp className="w-32 h-32 text-black/20" />
                 </div>
@@ -252,7 +261,7 @@ const About = () => {
 
         <div className="container mx-auto px-4 relative z-10">
           <div className="max-w-4xl mx-auto text-center">
-            <h2 className="text-4xl md:text-5xl font-heading font-bold mb-8 bg-gradient-to-r from-primary via-accent to-primary bg-clip-text ">
+            <h2 className="text-4xl md:text-5xl font-heading font-bold mb-8 bg-gradient-to-r from-primary via-accent to-primary bg-clip-text">
               Building the Future Together
             </h2>
             <p className="text-lg md:text-xl leading-relaxed mb-8 font-medium text-foreground/90">
