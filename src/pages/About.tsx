@@ -60,11 +60,14 @@ const About = () => {
     <div className="min-h-screen pt-20 bg-gradient-to-b from-background via-background to-accent/5">
       {/* Hero Section */}
       <section className="relative py-20 md:py-32 overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-br from-primary/8 via-accent/3 to-transparent" />
+        <div className="absolute inset-0 bg-gradient-to-br from-primary/3 via-accent/1 md:from-primary/8 md:via-accent/3 to-transparent" />
 
         {/* Animated background elements */}
-        <div className="absolute top-20 left-10 w-64 h-64 bg-gradient-3d opacity-1 rounded-full blur-3xl animate-pulse pointer-events-none"></div>
-        <div className="absolute -bottom-32 -right-32 w-96 h-96 bg-gradient-3d opacity-3 rounded-full blur-2xl pointer-events-none"></div>
+        {/* <div className="absolute top-20 left-10 w-64 h-64 bg-gradient-3d opacity-1 rounded-full blur-3xl animate-pulse pointer-events-none"></div>
+        <div className="absolute -bottom-32 -right-32 w-96 h-96 bg-gradient-3d opacity-3 rounded-full blur-2xl pointer-events-none"></div> */}
+        <div className="absolute top-20 left-10 w-64 h-64 bg-gradient-3d opacity-20 md:opacity-50 rounded-full blur-3xl animate-pulse pointer-events-none"></div>
+
+        <div className="absolute -bottom-32 -right-32 w-96 h-96 bg-gradient-3d opacity-10 md:opacity-40 rounded-full blur-2xl pointer-events-none"></div>
 
         <div className="container mx-auto px-4 relative z-10">
           <div className="max-w-4xl mx-auto text-center">
@@ -96,7 +99,7 @@ const About = () => {
                 growth and innovation.
               </p>
             </div>
-            <div className="relative">
+            <div className="relative hidden md:block">
               <div className="aspect-square rounded-3xl bg-gradient-to-br from-primary/10 to-accent/5 p-8 border border-primary/20">
                 <div className="w-full h-full rounded-2xl bg-gradient-primary flex items-center justify-center">
                   <Target className="w-32 h-32 text-black/20" />
@@ -242,7 +245,7 @@ const About = () => {
                 ))}
               </div>
             </div>
-            <div className="relative">
+            <div className="relative hidden md:block">
               <div className="aspect-square rounded-3xl bg-gradient-to-br from-primary/15 to-accent/10 p-8 border border-primary/20 hover:border-primary/40 transition-all">
                 <div className="w-full h-full rounded-2xl bg-gradient-primary flex items-center justify-center">
                   <TrendingUp className="w-32 h-32 text-black/20" />

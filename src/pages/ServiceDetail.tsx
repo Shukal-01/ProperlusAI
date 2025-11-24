@@ -53,11 +53,13 @@ const ServiceDetail = () => {
       </div>
 
       {/* CHANGE: Hero section with improved gradient background */}
-      <section className="py-12 md:py-20 bg-gradient-to-br from-primary/8 via-accent/4 to-transparent border-b border-primary/20 relative overflow-hidden">
+      <section className="py-12 md:py-20 bg-gradient-to-br from-primary/3 via-accent/1 md:from-primary/8 md:via-accent/3 to-transparent border-b border-primary/20 relative overflow-hidden">
         {/* Animated background elements */}
-        <div className="absolute top-20 left-10 w-64 h-64 bg-gradient-3d opacity-1 rounded-full blur-3xl animate-pulse pointer-events-none"></div>
-        <div className="absolute -bottom-32 -right-32 w-96 h-96 bg-gradient-3d opacity-3 rounded-full blur-2xl pointer-events-none"></div>
+        {/* <div className="absolute top-20 left-10 w-64 h-64 bg-gradient-3d opacity-1 rounded-full blur-3xl animate-pulse pointer-events-none"></div>
+        <div className="absolute -bottom-32 -right-32 w-96 h-96 bg-gradient-3d opacity-3 rounded-full blur-2xl pointer-events-none"></div> */}
+<div className="absolute top-20 left-10 w-64 h-64 bg-gradient-3d opacity-20 md:opacity-50 rounded-full blur-3xl animate-pulse pointer-events-none"></div>
 
+<div className="absolute -bottom-32 -right-32 w-96 h-96 bg-gradient-3d opacity-10 md:opacity-40 rounded-full blur-2xl pointer-events-none"></div>
         <div className="container mx-auto px-4 relative z-10">
           <div className="max-w-4xl mx-auto">
             {/* <h1 className="text-4xl md:text-6xl font-heading font-bold mb-6 text-foreground hero-gradient-text">
@@ -78,14 +80,14 @@ const ServiceDetail = () => {
               {/* Description - CHANGE: Enhanced with gradient cards */}
               <div className="p-8 rounded-2xl border border-primary/20 bg-gradient-to-br from-card/60 to-card/40 hover:border-primary/40 transition-all card-lift">
                 <h2 className="text-2xl md:text-3xl font-heading font-bold mb-4 text-foreground">
-                  Detailed Description
+                  Detailed <span className="hero-gradient-text">Description</span>
                 </h2>
                 <p className="text-muted-foreground leading-relaxed text-lg">{service.description}</p>
               </div>
 
               {/* Key Features - CHANGE: Updated styling with better hover effects */}
               <div>
-                <h2 className="text-2xl md:text-3xl font-heading font-bold mb-6 text-foreground">Key Features</h2>
+                <h2 className="text-2xl md:text-3xl font-heading font-bold mb-6 text-foreground">Key <span className="hero-gradient-text">Features</span></h2>
                 <div className="grid md:grid-cols-2 gap-4">
                   {service.features.map((feature, i) => (
                     <div
@@ -101,7 +103,7 @@ const ServiceDetail = () => {
 
               {/* Tools & Software */}
               <div>
-                <h2 className="text-2xl md:text-3xl font-heading font-bold mb-6 text-foreground">Tools & Software</h2>
+                <h2 className="text-2xl md:text-3xl font-heading font-bold mb-6 text-foreground">Tools & <span className="hero-gradient-text">Softwares</span></h2>
                 <div className="flex flex-wrap gap-3">
                   {service.tools.map((tool, i) => (
                     <span
@@ -116,7 +118,7 @@ const ServiceDetail = () => {
 
               {/* Pricing - CHANGE: Improved card layout with better gradient */}
               <div>
-                <h2 className="text-2xl md:text-3xl font-heading font-bold mb-6 text-foreground">Pricing (USD)</h2>
+                <h2 className="text-2xl md:text-3xl font-heading font-bold mb-6 text-foreground">Pricing <span className="hero-gradient-text">(USD)</span></h2>
                 <div className="grid md:grid-cols-3 gap-4">
                   {service.pricing.map((plan, i) => (
                     <Card
@@ -136,7 +138,7 @@ const ServiceDetail = () => {
               {/* Future Growth Options */}
               <div>
                 <h2 className="text-2xl md:text-3xl font-heading font-bold mb-6 text-foreground">
-                  Future Growth Options
+                  Future Growth <span className="hero-gradient-text">Options</span>
                 </h2>
                 <div className="grid gap-3">
                   {service.growth.map((option, i) => (

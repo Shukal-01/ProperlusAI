@@ -3,7 +3,7 @@
 import type React from "react"
 import { createContext, useContext, useEffect, useState } from "react"
 
-export type ThemeName = "golden-warm" | "royal-purple" | "crimson-dark" | "lime-fresh" | "grape-magenta"
+export type ThemeName = "golden-warm" | "royal-purple" | "crimson-dark" | "lime-fresh" | "grape-magenta" | "navy-gold"
 
 interface ThemeContextType {
   theme: ThemeName
@@ -51,6 +51,19 @@ export const themes: Record<
     secondary: "#d946ef",
     dark: "#110f10",
   },
+//   "navy-gold": {
+//     primary: "#0A1A4A",   // Deep Royal Navy
+//     secondary: "#0A1A4A", // Balanced cool navy
+//     // accent: "#F6C667",    // Soft Gold
+//     accent: "#D4AF37",
+//     dark: "#020B14",      // Polished dark background
+// },
+"navy-gold": {
+  primary: "#0A1A4A",
+  accent: "#D4AF37",
+  secondary: "#1E2A68",
+  dark: "#050914",
+},
 }
 
 export const ThemeProvider: React.FC<{ children: React.ReactNode }> = ({ children }) => {
