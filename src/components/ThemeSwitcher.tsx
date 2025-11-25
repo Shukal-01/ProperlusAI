@@ -21,8 +21,8 @@ const ThemeSwitcher = () => {
     const themeOptions: { name: ThemeName; label: string; emoji: string }[] = [
         { name: "golden-warm", label: "Golden Warm", emoji: "✨" },
         { name: "royal-purple", label: "Royal Purple", emoji: "👑" },
-        { name: "crimson-dark", label: "Crimson Dark", emoji: "🔴" },
-        { name: "lime-fresh", label: "Lime Fresh", emoji: "🌿" },
+        // { name: "crimson-dark", label: "Crimson Dark", emoji: "🔴" },
+        // { name: "lime-fresh", label: "Lime Fresh", emoji: "🌿" },
         // { name: "navy-gold", label: "Navy Gold", emoji: "✨" },
         // { name: "grape-magenta", label: "Grape Magenta", emoji: "💜" },
     ]

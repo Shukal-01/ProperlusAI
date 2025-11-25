@@ -60,13 +60,15 @@ export const themes: Record<
 }
 
 export const ThemeProvider: React.FC<{ children: React.ReactNode }> = ({ children }) => {
-  const [theme, setThemeState] = useState<ThemeName>(() => {
-    if (typeof window !== "undefined") {
-      const saved = localStorage.getItem("theme") as ThemeName
-      return saved && saved in themes ? saved : "royal-purple"
-    }
-    return "royal-purple"
-  })
+  // const [theme, setThemeState] = useState<ThemeName>(() => {
+  //   if (typeof window !== "undefined") {
+  //     const saved = localStorage.getItem("theme") as ThemeName
+  //     return saved && saved in themes ? saved : "golden-warm"
+  //   }
+  //   return "golden-warm"
+  // })
+    // DEFAULT IS ALWAYS "golden-warm"
+  const [theme, setThemeState] = useState<ThemeName>("golden-warm")
 
   const setTheme = (newTheme: ThemeName) => {
     setThemeState(newTheme)
